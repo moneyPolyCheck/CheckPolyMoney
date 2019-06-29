@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/checkIn.css">
+    <meta name="keywords" content="Регистрация">
+    <meta name="discription" content="Отслеживайте свой бюджет, зарегистрировавшись на check_poly_money.ru">
+    <meta name="author" lang = "ru" content="Елизавета Медведева">
+    <script type="text/javascript">
+        <!-- Здесь проиходит проверка на правильность данных-->
+        function valid(form) {
+            var pattern = /[0-9a-z_-]+\@[0-9a-z_-]+\.[a-z]{2,5}/i;
+            var fail = NaN;
+            var name = form.name.value;
+            var password = form.password.value;
+            var RePassword = form.RePassword.value;
+            if (name === "" || name === " ")
+                fail = "Вы не ввели свой e-mail";
+            else if(pattern.test(name)===false){
+                fail = "Вы неправильно ввели свой e-mail";
+            }
+            else if (password === "")
+                fail = "Вы не ввели пароль";
+            else if (password !== RePassword)
+                fail = "Пароли не совпадают";
+            if (fail){
+                alert(fail);}
+            else
+                window.location = "https://www.google.ru/"
+        }
+    </script>
+
+</head>
+<body>
+<form action="" method="post" name="test" id="form">
+    <span class="info-text">Регистрация</span>
+
+    <input type="text" name="name" placeholder="e-mail" id="name" size =70 class="loginField" /> <br/><br/>
+
+    <input type="password" name="password" placeholder="Пароль" id="password" size =70 class="paspasswordMain"  /> <br/><br/>
+
+    <input type="password" name="RePassword" placeholder="Повторите Пароль" id="RePassword" size =70 class="paspasswordRe" /> <br/><br/>
+
+    <input type="button" onclick="valid(document.getElementById('form'))" class="inputField" name="submit" value="Готово"/>
+</form>
+</body>
+</html>

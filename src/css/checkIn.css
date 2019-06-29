@@ -1,0 +1,73 @@
+body {
+    margin: 0px auto;
+    background-color: #d0c7e2;
+
+}
+form {
+    background: #fffdfd;
+    width: 500px;height: 460px; /* Размеры */ /* Цвет фона */
+    margin-top: 80px;
+    outline: 2px solid #d0c7e2; /* Чёрная рамка */
+    margin-left: 410px;
+}
+
+.loginField {
+    color: #9700ff; /* Цвет текста */
+    border: solid 1px #9700ff;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    height: 40px; /*ширина поля*/
+    margin-top: -100px; /*отступ сверху*/
+    width: 25%; /*размер поля по горизонтали */
+    margin-left: -200px; /*отступ поля слева */
+    font:icon;
+    font-size: 17px;
+}
+.info-text{
+    color: #000000; /* Цвет текста */
+    position: fixed;
+    left: 43%;
+    top: 27%;
+    font-size: 25px;
+}
+.paspasswordMain{
+    color: #9700ff; /* Цвет текста */
+    border: solid 1px #9700ff;
+    position: fixed;
+    left: 50%;
+    top: 60%;
+    height: 40px; /*ширина поля*/
+    margin-top: -100px; /*отступ сверху*/
+    width: 25%; /*размер поля по горизонтали */
+    margin-left: -200px; /*отступ поля слева */
+    font:icon;
+    font-size: 17px;
+}
+.paspasswordRe{
+    color: #9700ff; /* Цвет текста */
+    border: solid 1px #9700ff;
+    position: fixed;
+    left: 50%;
+    top: 70%;
+    height: 40px; /*ширина поля*/
+    margin-top: -100px; /*отступ сверху*/
+    width: 25%; /*размер поля по горизонтали */
+    margin-left: -200px; /*отступ поля слева */
+    font:icon;
+    font-size: 17px;
+}
+.inputField {
+    background-color: #a566c7; /* Цвет фона */
+    color: white; /* Цвет текста */
+    border: solid 1px #d0c7e2;
+    position: fixed;
+    left: 50%;
+    top: 73%;
+    height: 40px; /*ширина поля*/
+    margin-top: -50px; /*отступ сверху*/
+    width: 25%; /*размер поля по горизонтали */
+    margin-left: -200px; /*отступ поля слева */
+    font:icon;
+    font-size: 17px;
+}
