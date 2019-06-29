@@ -64,7 +64,7 @@ form {
     position: fixed;
     left: 50%;
     top: 73%;
-    height: 40px; /*ширина поля*/
+    height: 40px;
     margin-top: -50px; /*отступ сверху*/
     width: 25%; /*размер поля по горизонтали */
     margin-left: -200px; /*отступ поля слева */
