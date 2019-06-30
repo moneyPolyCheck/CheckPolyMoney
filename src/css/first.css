@@ -1,0 +1,97 @@
+body {
+    margin: 0px auto;
+    background-color: #d0c7e2;
+}
+
+div {
+    background: white;
+    width: 500px;	height: 460px; /* Размеры */ /* Цвет фона */
+    margin-top: 140px;
+    outline: 2px solid #d0c7e2; /* Чёрная рамка */
+    margin-left: 450px;
+}
+
+.loginField {
+    background-color: white; /* Цвет фона */
+    color: black; /* Цвет текста */
+    border: solid 1px #a566c7;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    height: 40px; /*ширина поля*/
+    margin-top: -170px; /*отступ сверху*/
+    width: 25%; /*размер поля по горизонтали */
+    margin-left: -200px; /*отступ поля слева */
+    font:icon;
+    font-size: 17px;
+}
+
+.passwordField {
+    background-color: white; /* Цвет фона */
+    color: black; /* Цвет текста */
+    border: solid 1px #a566c7;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    height: 40px; /*ширина поля*/
+    margin-top: -110px; /*отступ сверху*/
+    width: 25%; /*размер поля по горизонтали */
+    margin-left: -200px; /*отступ поля слева */
+    font:icon;
+    font-size: 17px;
+}
+
+.inputField {
+    background-color: #a566c7; /* Цвет фона */
+    color: white; /* Цвет текста */
+    border: solid 1px #d0c7e2;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    height: 40px; /*ширина поля*/
+    margin-top: -50px; /*отступ сверху*/
+    width: 25%; /*размер поля по горизонтали */
+    margin-left: -200px; /*отступ поля слева */
+    font:icon;
+    font-size: 17px;
+}
+
+.registration{
+    border: solid 1px #a566c7;
+    background-color: white; /* Цвет фона */
+    color: #a566c7; /* Цвет текста */
+    font-size: 17px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    height: 40px; /*ширина поля*/
+    margin-top: 40px; /*отступ сверху*/
+    width: 25%; /*размер поля по горизонтали */
+    margin-left: -200px; /*отступ поля слева */
+    font:icon;
+    font-size: 17px;
+}
+
+.forgotPassword{
+    font-size: 17px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    height: 40px; /*ширина поля*/
+    margin-top: 90px; /*отступ сверху*/
+    width: 25%; /*размер поля по горизонтали */
+    margin-left: -200px; /*отступ поля слева */
+    font:icon;
+    font-size: 17px;
+    text-align: center;
+}
+A {
+    color: #a566c7; /* Цвет ссылок */
+}
+A:link {
+    text-decoration: none; /* Убирает подчеркивание для ссылок */
+}
+a:hover {
+    color: #988e8e; /* Цвет ссылки при наведении на нее курсора мыши */
+    text-decoration: underline; /* Добавляем подчеркивание */
+}
