@@ -3,14 +3,26 @@ body {
     background-color: #d0c7e2;
 }
 
-div {
-    background: white;
-    width: 500px;	height: 460px; /* Размеры */ /* Цвет фона */
-    margin-top: 140px;
-    outline: 2px solid #d0c7e2; /* Чёрная рамка */
-    margin-left: 450px;
+@media screen and (min-width: 1280px) and (max-width: 1599px){
+    div {
+        background: #fffdfd;
+        width: 500px;height: 460px; /* Размеры */ /* Цвет фона */
+        margin-top: 80px;
+        outline: 2px solid #691b99; /* Чёрная рамка */
+        margin-left: 410px;
+    }
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    div {
+        background: white;
+        width: 500px;
+        height: 460px; /* Размеры */ /* Цвет фона */
+        margin-top: 140px;
+        outline: 2px solid #691b99; /* Чёрная рамка */
+        margin-left: 450px;
+    }
+}
 
 .loginField {
     background-color: white; /* Цвет фона */
