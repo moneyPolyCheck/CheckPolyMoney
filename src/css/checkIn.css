@@ -50,6 +50,7 @@ span{
     font:icon;
     font-size:20px;
 }
+
 #RePassword{
     color: #9700ff; /* Цвет текста */
     border: solid 1px #9700ff;
@@ -60,6 +61,7 @@ span{
     font:icon;
     font-size:20px;
 }
+
 .inputField {
     background-color: #a566c7; /* Цвет фона */
     color: #fffdfd; /* Цвет текста */

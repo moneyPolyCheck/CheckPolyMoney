@@ -1,0 +1,13 @@
+body {
+    margin: 0px auto;
+    background-color: #a566c7;
+}
+table {
+    width: 600px; /* Ширина таблицы */
+    border: 1px solid white; /* Рамка вокруг таблицы */
+    background-color: white;
+    margin: auto; /* Выравниваем таблицу по центру окна  */
+}
+td {
+    text-align: center; /* Выравниваем текст по центру ячейки */
+}
