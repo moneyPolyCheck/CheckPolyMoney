@@ -1,0 +1,56 @@
+body {
+    margin: 0px auto;
+    background-color: #e8ceff;
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1600px){
+    form {
+        background: #fffdfd;
+        width: 470px;height: 350px; /* Размеры */ /* Цвет фона */
+		margin-top: 30px;
+		outline: 2px solid #000000; /* Чёрная рамка */
+		margin-left: 410px;
+}}
+
+#act {
+    color: #000000; /* Цвет текста */
+    border: solid 1px #000000;
+    height: 40px; /*ширина поля*/
+    margin-top: 50px; /*отступ сверху*/
+    width: 70%; /*размер поля по горизонтали */
+    margin-left: 70px; /*отступ поля слева */
+    font:icon;
+    font-size:20px;
+}
+span{
+    font-family: Arial, serif;
+    color: #000000; /* Цвет текста */
+    left: 60em;
+    font-size: 30px;
+    margin-left: 140px; /*отступ поля слева */
+    margin-top: -10px;
+}
+
+
+#RePassword{
+    color: rgba(0, 0, 0, 0.31); /* Цвет текста */
+    border: solid 1px rgba(0, 0, 0, 0.23);
+    height: 40px; /*ширина поля*/
+    margin-top: 0px; /*отступ сверху*/
+    width: 70%; /*размер поля по горизонтали */
+    margin-left: 70px; /*отступ поля слева */
+    font:icon;
+    font-size:20px;
+}
+
+.inputField {
+    background-color: #9c9fc7; /* Цвет фона */
+    color: #fffdfd; /* Цвет текста */
+    border: solid 1px #7a8784;
+    height: 40px; /*ширина поля*/
+    margin-top: 20px; /*отступ сверху*/
+    width: 70%; /*размер поля по горизонтали */
+    margin-left: 70px; /*отступ поля слева */
+    font:icon;
+    font-size:20px;
+}
