@@ -29,12 +29,10 @@ body {
     color: black; /* Цвет текста */
     border: solid 1px #a566c7;
     position: fixed;
-    left: 50%;
-    top: 50%;
+    margin-left: 480px;
+    margin-top: -350px;
     height: 40px; /*ширина поля*/
-    margin-top: -170px; /*отступ сверху*/
     width: 25%; /*размер поля по горизонтали */
-    margin-left: -200px; /*отступ поля слева */
     font:icon;
     font-size: 17px;
 }
@@ -44,12 +42,10 @@ body {
     color: black; /* Цвет текста */
     border: solid 1px #a566c7;
     position: fixed;
-    left: 50%;
-    top: 50%;
+    margin-left: 480px;
+    margin-top: -270px;
     height: 40px; /*ширина поля*/
-    margin-top: -110px; /*отступ сверху*/
     width: 25%; /*размер поля по горизонтали */
-    margin-left: -200px; /*отступ поля слева */
     font:icon;
     font-size: 17px;
 }
@@ -59,12 +55,10 @@ body {
     color: white; /* Цвет текста */
     border: solid 1px #d0c7e2;
     position: fixed;
-    left: 50%;
-    top: 50%;
+    margin-left: 480px;
+    margin-top: -190px;
     height: 40px; /*ширина поля*/
-    margin-top: -50px; /*отступ сверху*/
     width: 25%; /*размер поля по горизонтали */
-    margin-left: -200px; /*отступ поля слева */
     font:icon;
     font-size: 17px;
 }
@@ -75,12 +69,10 @@ body {
     color: #a566c7; /* Цвет текста */
     font-size: 17px;
     position: fixed;
-    left: 50%;
-    top: 50%;
+    margin-left: 480px;
+    margin-top: -130px;
     height: 40px; /*ширина поля*/
-    margin-top: 40px; /*отступ сверху*/
     width: 25%; /*размер поля по горизонтали */
-    margin-left: -200px; /*отступ поля слева */
     font:icon;
     font-size: 17px;
 }
@@ -88,12 +80,10 @@ body {
 .forgotPassword{
     font-size: 17px;
     position: fixed;
-    left: 50%;
-    top: 50%;
+    margin-left: 480px;
+    margin-top: -70px;
     height: 40px; /*ширина поля*/
-    margin-top: 90px; /*отступ сверху*/
     width: 25%; /*размер поля по горизонтали */
-    margin-left: -200px; /*отступ поля слева */
     font:icon;
     font-size: 17px;
     text-align: center;

@@ -23,7 +23,7 @@ body {
 }
 
 #name {
-    color: #9700ff; /* Цвет текста */
+    color: black; /* Цвет текста */
     border: solid 1px #9700ff;
     height: 40px; /*ширина поля*/
     margin-top: 50px; /*отступ сверху*/
@@ -32,16 +32,18 @@ body {
     font:icon;
     font-size:20px;
 }
+
 span{
     font-family: Arial, serif;
-    color: #420031; /* Цвет текста */
+    color: #691b99; /* Цвет текста */
     left: 60em;
     font-size: 30px;
     margin-left: 140px; /*отступ поля слева */
     margin-top: -10px;
 }
+
 #password{
-    color: #9700ff; /* Цвет текста */
+    color: black; /* Цвет текста */
     border: solid 1px #9700ff;
     height: 40px; /*ширина поля*/
     margin-top: 20px; /*отступ сверху*/
@@ -52,7 +54,7 @@ span{
 }
 
 #RePassword{
-    color: #9700ff; /* Цвет текста */
+    color: black; /* Цвет текста */
     border: solid 1px #9700ff;
     height: 40px; /*ширина поля*/
     margin-top: 0px; /*отступ сверху*/
