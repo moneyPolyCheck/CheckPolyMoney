@@ -8,10 +8,15 @@
 </head>
 <body>
 <div> </div>
-<input type="text" placeholder="Логин" size="70" class="loginField">
+<form action = "../php/login.php" method = "POST">
+    <input type="text" name = "login" placeholder="Логин" size="70" class="loginField" >
 <input type="password" placeholder="Пароль" size="40" class="passwordField">
-<input  class="inputField" type="submit" value="Вход" onclick=window.open('../html/main.html')>
-<a href="../html/checkIn.html" class="forgotPassword" >Забыли пароль?</a>
-<input class="registration" type="button" value="Регистрация" onclick=window.open('../html/checkIn.html',"_self")>
+<input  class="inputField" type="submit" value="Вход">
+<a href="../html/forgetPassword.html" class="forgotPassword" >Забыли пароль?</a>
+<input class="registration" type="button" name = "do_login" value="Регистрация"  onclick=window.open('../html/checkIn.html',"_self")>
+</form>
+<form action = "../php/logout.php" method = post>
+    <input  type="submit" value="Выход ">
+</form>
 </body>
 </html>

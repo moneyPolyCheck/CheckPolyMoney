@@ -10,4 +10,5 @@ table {
 }
 td {
     text-align: center; /* Выравниваем текст по центру ячейки */
+    font-size:20px;
 }
