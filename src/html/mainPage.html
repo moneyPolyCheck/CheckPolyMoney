@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="../css/mainPage.css">
+    <meta name="discription" content="Отслеживайте бюджет, зарегистрировавшись на check_poly_cash.ru">
+    <meta name="author" lang="ru" content="Елизавета Медведева">
+    <style>
+        a img {
+            border: 3px solid #c79316; /* Рамка вокруг ссылок */
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div id="header">
+        <p><img src="../img/CheckPoly.png" border="1" width="230" height="65" alt="LOGO" align="left" hspace="20"
+                onclick=window.open('mainPage.html',"_self")></p>
+        <h1 id="info">Мы помогаем не только вам, но и вашему бюджету!</h1>
+        <!--Здесь н должен переносить в файл, в котором будет закрываться сессия,
+        на 10.07.2019 это не реализованно, поэтому вывожу на страницу входа-->
+        <input class="exit" type="button" value="Выход" onclick=window.open('../html/first.html',"_self")></div>
+    <div id="content">
+        <div id="inner-content"><br>
+            <h2 id="infoGlob">Кликни на нужную иконку!)</h2>
+            <div id="inner-contentOne">
+                <figure class="sign">
+                    <p><img src="../img/october%20.png" width="120" height="120" alt="Цель"
+                            style="margin-top: 50px" onclick=window.open('../php/main.php',"_self")></p>
+                    <figcaption id="infoOne">Создай цель!</figcaption>
+                </figure>
+            </div>
+            <div id="inner-contentTwo">
+                <figure class="sign">
+                    <p><img src="../img/recycle.png" width="120" height="120" alt="Отмечай" hspace="30"
+                            style="margin-top: 50px"
+                            onclick=window.open('../php/main.php',"_self")></p>
+                    <figcaption id="infoTwo">Отмечай каждый день</figcaption>
+                </figure>
+            </div>
+            <div id="inner-contentThree">
+                <figure class="sign">
+                    <p><img src="../img/save.png" width="120" height="120" alt="Итог" hspace="40"
+                            style="margin-top: 50px"
+                            onclick=window.open('../php/main.php',"_self")></p>
+                    <figcaption id="infoThree">Получай результат!</figcaption>
+                </figure>
+            </div>
+        </div>
+        <div id="footer">
+            <p id="info-text">Связаться с нами вы можете по адресу: test_d_b@mail.ru</p>
+        </div>
+    </div>
+    <script src="../php/checkIn.php"></script>
+</body>
+</html>
