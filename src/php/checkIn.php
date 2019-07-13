@@ -3,7 +3,7 @@ require 'db.php';
 $msg='';
 if(!empty($_POST['to_push'])){
   if(!empty($_POST['name']) && isset($_POST['name'])){
-	  if(!empty($_POST['password']) && isset($_POST['password'])&&$_POST['password']>=5){
+	  if(!empty($_POST['password']) && isset($_POST['password'])&&iconv_strlen($_POST['password'])>=5){
 		if($_POST['password']==$_POST['RePassword']){
          // имя пользователя и пароль отправлены из формы
         $name=$_POST['name'];
@@ -15,13 +15,13 @@ if(!empty($_POST['to_push'])){
         // проверка адреса электронной почты
 	       if(mysqli_num_rows($count) < 1){
 		    $activation = md5($name);
-			$pass = password_hash('password', PASSWORD_DEFAULT);
-		    $sql = "INSERT INTO users (email,password,activation) VALUES('$name','$pass','$activation')";
+		    $sql = "INSERT INTO users (email,password,activation) VALUES('$name','$password','$activation')";
 		  // отправка письма на электронный ящик
 		  if (mysqli_query($connection, $sql)) {
 		  include '../smtp/Send_Mail.php';
           $to=$name;
           $subject="Подтверждение электронной почты";
+		  //в теле будет отправка!!!
           $body='Здравствуйте! <br/> <br/> Мы должны убедиться в том, что вы человек. Мы высылаем вам секретный пароль, используете его при входе на сайт. <br/> <br/> <p '.$activation.'">'.$activation.'</p>';
 
 		  Send_Mail($to,$subject,$body);

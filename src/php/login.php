@@ -2,54 +2,44 @@
 require "connection.php";
 $data = $_POST;
 if (isset ($_SESSION['login'])) {
-    unset($_SESSION['login']);
-    echo "<div style = \"color: #36ff4c;\">вы уже авторизованы</div>";
-    //header('location: ../html/goals.html');
-    header('location: ../html/mainPage.html');
-    //header('Location: ../html/first.html')
+    echo "вы уже авторизованы";
 }
 if (isset($data['do_login'])) {
-    $errors = array();
-    $log = $data['login'];
-    $query = "SELECT password FROM `checkIn` WHERE email = '$log'";
-    $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
-    $row = mysqli_fetch_array($result);
-    if ($result) {
-        if ($data['password'] == $row[0]) {
-            //пароль совпадает
-            $_SESSION["login"] = $log;
-            header('location: ../html/mainPage.html');
-            //header('location: ../html/goals.html');
-            echo '<div style = "color: #36ff4c;"> Вы успешно вошли. Можете перейти на главную страницу <a href="../html/goals.html"> Главная страница</a></div>>';
-        } else {
-            echo"<Неверный пароль";
-            $errors[] = 'Неверный пароль';
+    if (!empty($_POST['login']) && !empty($_POST['password'])){
+        $login = htmlspecialchars($_POST['login']);
+        $password = htmlspecialchars($_POST['password']);
+        $query = mysqli_query($link, "SELECT * FROM `users` WHERE email='".$login."' AND password = '".$password."' ");
+        $numrows = mysqli_num_rows($query);
+        if ($numrows != 0){
+            echo "такой логин существует";
+            while ($row = mysqli_fetch_assoc($query)){
+                $db_login = $row['email'];
+                $db_password = $row['password'];
+            }
+            if ($login == $db_login && $password == $db_password){
+                echo "все совпало, крутяк";
+                $_SESSION["login"] = $login;
+                header('location: ../html/mainPage.html');
+            } else echo "Вы неправильно ввели логин или пароль";
         }
-    } else {
-        echo"Неверный логин";
-        $errors[] = 'Неверный логин';
-    }
-}
-if (!empty($errors)){
-    echo '<div style = "color: red;">'.array_shift($errors).'</div><hr>';
+    } else echo "Вы не ввели пароль или логин";
 }
 ?>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Контроль бюджета</title>
-<link rel = "stylesheet" href = ../css/first.css>
+<link rel = "stylesheet" href = ../css/login.css>
 </head>
 <body>
 <div> </div>
 <form action = "login.php" method = "POST">
-    <input type="text" name = "login" placeholder="Логин" size="70" class="loginField" value ="<?php echo @$data['login'];?>">
+<input type="text" name = "login" placeholder="Логин" size="70" class="loginField" value ="<?php echo @$data['login'];?>">
 <input name = "password" type="password" placeholder="Пароль" size="40" class="passwordField" value ="<?php echo @$data['password'];?>">
 <input  class="inputField" name = "do_login" type="submit" value="Вход ">
-<input class="registration" type="button"  value="Регистрация"  onclick=window.open('../html/checkIn.html',"_self")>
-    <form action = "logout.php" method = post>
-        <input  type="submit" value="Выход ">
-    </form>
+<a href="../html/forgetPassword.html" class="forgotPassword" >Забыли пароль?</a>
+<input class="registration" type="button"  value="Регистрация"  onclick=window.open('../php/checkIn.php',"_self")>
+
 
 
 </form>

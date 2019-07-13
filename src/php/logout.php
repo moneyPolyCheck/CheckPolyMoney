@@ -1,6 +1,7 @@
 <?php
 require "connection.php";
 unset($_SESSION['login']);
-header('Location: ../html/first.html')
+session_destroy();
+header('Location: ../php/login.php')
 ?>
 
