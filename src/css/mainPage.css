@@ -1,85 +1,88 @@
 body{
     margin: 0px auto;
-    background-color: #ac93eb;
+    background-color: #c2c6f7;
 }
 #header{
-    background: #ac93eb;
+    background: #c2c6f7;
     height: 75px;
 }
 #content{
-    background: #e7e4ff;
-    min-height: 475px;
+    background: white;
+    height: 500px;
 }
 #footer{
-    background: #ac93eb;
-    height: 57px;
+    background: #c2c6f7;
+    height: 20px;
 }
 .exit {
-    background: #fffde3;
+    background:  #fffff7;
     font-family: 'Montserrat', sans-serif;
     padding: 15px 20px;
     font-size: 15px;
     color: #9244ff;
-    border: 1px solid #6f1d8a;
-    border-bottom: 4px solid #6f1d8a;
+    border: 3px solid #66458a;
+    border-bottom: 6px solid #66458a;
     cursor: pointer;
     float: right;
     margin-top: 10px;
     margin-right: 60px; /*отступ поля справа */
-    border-radius: 10px; /* Радиус скругления */
+    border-radius: 40px; /* Радиус скругления */
 
 }
 #info-text{
     font-family: Arial, serif;
     float: right;
-    background-color: #fffde3; /* Цвет фона */
-    color: #6f1d8a; /* Цвет текста */
+    background-color: #fffff7; /* Цвет фона */
+    color: #66458a; /* Цвет текста */
     margin-right: 60px; /*отступ поля справа */
     border-radius: 10px; /* Радиус скругления */
+    font-size: 16px;
+    font-weight: bold;
 }
 #inner-content{
-    width: 725px;	height: 465px; /* Размеры */
-    background: #fbffff; /* Цвет фона */
-    border: 5px solid #fffde3; /* Белая рамка */
-    border-radius: 10px; /* Радиус скругления */
-    margin-left: 300px;
+    width: 750px;	height: 490px; /* Размеры */
+    background: white; /* Цвет фона */
+    margin-left: 305px;
 }
 #info{
     float: left;
     font-family: Arial, fantasy;
-    color: #fbffff; /* Цвет текста */
-    background-color: #6f1d8a; /* Цвет фона */
-    outline: 2px solid #590039; /* Чёрная рамка */
-    margin-left: 40px;
-    border-radius: 10px; /* Радиус скругления */
+    color: rgba(102, 69, 138, 0.78); /* Цвет текста */
+    background-color: #fffff7; /* Цвет фона */
+    margin-left: 250px;
+    border-radius: 5px; /* Радиус скругления */
 }
 #inner-contentOne{
     margin-top: 100px;
     width: 220px;	height: 265px; /* Размеры */
-    background: rgba(150, 216, 42, 0); /* Цвет фона */
+    background: white; /* Цвет фона */
+
 }
 #inner-contentTwo{
     margin-top: -281px;
-    margin-left: 220px;
+    margin-left: 210px;
     width: 290px;	height: 265px; /* Размеры */
-    background: rgba(0, 0, 0, 0); /* Цвет фона */
+    background: white; /* Цвет фона */
 }
 #inner-contentThree{
     margin-top: -281px;
-    margin-left: 450px;
+    margin-left: 420px;
     width: 330px;	height: 265px; /* Размеры */
-    background: rgba(104, 7, 138, 0); /* Цвет фона */
+    background: white /* Цвет фона */
 }
 #infoOne{
     float: left;
     font-family: Arial, fantasy;
     color: #fbffff; /* Цвет текста */
     background-color: #ff5358; /* Цвет фона */
-    margin-top: -10px;
+    margin-top:auto;
     border-radius: 10px; /* Радиус скругления */
-    font-size: 20px;
+    font-size: 22px;
     text-decoration: underline;
-    outline: 2px solid rgba(132, 109, 255, 0.45); /* Чёрная рамка */
+    outline: 3px solid rgba(132, 109, 255, 0.45); /* Чёрная рамка */
+    font-weight: bold;
+    text-align: center;
+
 }
 #infoTwo{
     float: left;
@@ -87,32 +90,40 @@ body{
     color: #fbffff; /* Цвет текста */
     background-color: #7ed824; /* Цвет фона */
     border-radius: 10px; /* Радиус скругления */
-    margin-top: -10px;
-    outline: 2px solid rgba(132, 109, 255, 0.45); /* Чёрная рамка */
-    font-size: 20px;
+    margin-top: auto;
+    outline: 3px solid rgba(132, 109, 255, 0.45); /* Чёрная рамка */
+    font-size: 22px;
     text-decoration: underline;
-    margin-left: -10px;
+    margin-left: auto;
+    font-weight: bold;
+    text-align: center;
+
 }
 #infoThree{
     float: left;
     font-family: Arial, fantasy;
-    color: #fbffff; /* Цвет текста */
+    color: #ffffff; /* Цвет текста */
     background-color: rgba(0, 179, 240, 0.91); /* Цвет фона */
-    margin-left: 25px;
-    margin-top: -10px;
+    margin-left: 50px;
+    font-weight: bold;
+    margin-top: auto;
     border-radius: 10px; /* Радиус скругления */
-    font-size: 20px;
+    font-size: 22px;
     text-decoration: underline;
-    outline: 2px solid rgba(132, 109, 255, 0.45); /* Чёрная рамка */
+    outline: 3px solid rgba(132, 109, 255, 0.45); /* Чёрная рамка */
+    text-align: center;
 }
 #infoGlob{
     float: right;
     font-family: Arial, fantasy;
     font-size: 25px;
-    margin-right: 175px;
+    margin-right: 210px;
     color: #fbffff; /* Цвет текста */
-    background-color: #6f1d8a; /* Цвет фона */
-    outline: 2px solid #590039; /* Чёрная рамка */
-    margin-left: 40px;
-    border-radius: 10px; /* Радиус скругления */
+    background-color: #66458a; /* Цвет фона */
+    border-radius: 5px; /* Радиус скругления */
+    font-weight: bold;
+
+}
+.sign{
+    color: white;
 }

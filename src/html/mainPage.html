@@ -12,14 +12,13 @@
         }
     </style>
 </head>
+<html>
 <body>
 <div id="wrapper">
     <div id="header">
-        <p><img src="../img/CheckPoly.png" border="1" width="230" height="65" alt="LOGO" align="left" hspace="20"
-                onclick=window.open('mainPage.html',"_self")></p>
         <h1 id="info">Мы помогаем не только вам, но и вашему бюджету!</h1>
         <form action = "../php/logout.php">
-            <input class="exit" type="submit" value="Выход" )>
+            <input class="exit" type="submit" value="Выход" >
         </form>
     </div>
     <div id="content">
@@ -27,22 +26,22 @@
             <h2 id="infoGlob">Кликни на нужную иконку!)</h2>
             <div id="inner-contentOne">
                 <figure class="sign">
-                    <p><img src="../img/october%20.png" width="120" height="120" alt="Цель"
+                    <p><img src="../img/october.png" width="120" height="120" alt="Цель" hspace="10"
                             style="margin-top: 50px" onclick=window.open('../php/main.php',"_self")></p>
                     <figcaption id="infoOne">Создай цель!</figcaption>
                 </figure>
             </div>
             <div id="inner-contentTwo">
                 <figure class="sign">
-                    <p><img src="../img/recycle.png" width="120" height="120" alt="Отмечай" hspace="30"
+                    <p><img src="../img/agenda.png" width="120" height="120" alt="Отмечай" hspace="36"
                             style="margin-top: 50px"
                             onclick=window.open('../php/addingCosts.php',"_self")></p>
-                    <figcaption id="infoTwo">Отмечай каждый день</figcaption>
+                    <figcaption id="infoTwo">Отмечай свои расходы!</figcaption>
                 </figure>
             </div>
             <div id="inner-contentThree">
                 <figure class="sign">
-                    <p><img src="../img/save.png" width="120" height="120" alt="Итог" hspace="40"
+                    <p><img src="../img/mail.png" width="120" height="120" alt="Итог" hspace="80"
                             style="margin-top: 50px"
                             onclick=window.open('../php/main.php',"_self")></p>
                     <figcaption id="infoThree">Получай результат!</figcaption>
@@ -53,6 +52,6 @@
             <p id="info-text">Связаться с нами вы можете по адресу: test_d_b@mail.ru</p>
         </div>
     </div>
-    <script src="../php/checkIn.php"></script>
+</div>
 </body>
 </html>
