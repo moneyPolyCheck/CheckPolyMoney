@@ -1,22 +1,29 @@
 <?php
-require 'db.php';
-include 'functionForAddingExpenses.php';
-
+require "db.php";
 //Подключаем id
-$sql = mysqli_query($connection, "SELECT id_cost FROM costs WHERE id_cost=2");
+session_start();
+$justVar = $_SESSION['login'];
+include "functionForAddingExpenses.php";
+$customId = mysqli_query($connection, "SELECT id FROM users WHERE email='$justVar'");
+$userId = mysqli_fetch_row($customId);
+//Подключаем id
+$sql = mysqli_query($connection, "SELECT id_cost FROM costs WHERE id_cost='$userId[0]'");
+$rowq = mysqli_fetch_row($sql);
 if(mysqli_num_rows($sql)==0){
-	    $id2 = "INSERT INTO costs(id_cost) VALUES(2)";
-	    if(mysqli_query($connection, $id2)){
-	   }else {echo "Error: " . $id2 . "<br>" . mysqli_error($connection);}
+	    $id = "INSERT INTO costs(id_cost) VALUES($userId[0])";
+	    if(mysqli_query($connection, $id)){
+	   }else {echo "Error: " . $id . "<br>" . mysqli_error($connection);}
 }
 // Определяем дату
 date_default_timezone_set('Russia/Moscow');
 $dateN = date('m');
-$check = mysqli_query($connection,"SELECT current_month FROM costs WHERE id_cost=2");
+$check = mysqli_query($connection,"SELECT current_month FROM costs WHERE id_cost='$userId[0]'");
 $row = mysqli_fetch_row($check);
 if($check){
-	if($row[0]==0){
-		$my = "UPDATE costs SET current_month = $dateN";
+	if(empty($row[0])==TRUE){
+		echo ' где-то здесь';
+		$my = mysqli_query($connection,"UPDATE costs SET current_month = $dateN");
+		
 	}
 }else {echo "Error: " . $check . "<br>" . mysqli_error($connection);}
 //сравниваем месяц в бд и текущий
@@ -81,61 +88,61 @@ if(!empty($_POST['to_push'])){
 }
 }
 	//блок, где введеные данные выводятся на страницу
-	$foodSql = mysqli_query($connection, "SELECT food FROM costs WHERE id_cost=2");
+	$foodSql = mysqli_query($connection, "SELECT food FROM costs WHERE id_cost='$userId[0]'");
 	if($foodSql){
 		$rowFood = mysqli_fetch_row($foodSql);
 	}else{echo 'С вашими данными что-то не так, обратитесь в тех поддержку!';}
 	
-	$foodH_G = mysqli_query($connection, "SELECT household_goods FROM costs WHERE id_cost=2");
+	$foodH_G = mysqli_query($connection, "SELECT household_goods FROM costs WHERE id_cost='$userId[0]'");
 	if($foodH_G){
 		$rowH_G = mysqli_fetch_row($foodH_G);
 	}else{echo 'С вашими данными что-то не так, обратитесь в тех поддержку!';}
 	
-	$foodClothes = mysqli_query($connection, "SELECT clothes FROM costs WHERE id_cost=2");
+	$foodClothes = mysqli_query($connection, "SELECT clothes FROM costs WHERE id_cost='$userId[0]'");
 	if($foodClothes){
 		$rowClothes = mysqli_fetch_row($foodClothes);
 	}else{echo 'С вашими данными что-то не так, обратитесь в тех поддержку!';}
-	$Housing = mysqli_query($connection, "SELECT housing FROM costs WHERE id_cost=2");
+	$Housing = mysqli_query($connection, "SELECT housing FROM costs WHERE id_cost='$userId[0]'");
 	if($Housing){
 		$rowHousing = mysqli_fetch_row($Housing);
 	}else{echo 'С вашими данными что-то не так, обратитесь в тех поддержку!';}
 	
-    $foodHealth = mysqli_query($connection, "SELECT health FROM costs WHERE id_cost=2");
+    $foodHealth = mysqli_query($connection, "SELECT health FROM costs WHERE id_cost='$userId[0]'");
 	if($foodHealth){
 		$rowHealth = mysqli_fetch_row($foodHealth);
 	}else{echo 'С вашими данными что-то не так, обратитесь в тех поддержку!';}
 	
-    $foodSport = mysqli_query($connection, "SELECT sport FROM costs WHERE id_cost=2");
+    $foodSport = mysqli_query($connection, "SELECT sport FROM costs WHERE id_cost='$userId[0]'");
 	if($foodSport){
 		$rowSport = mysqli_fetch_row($foodSport);
 	}else{echo 'С вашими данными что-то не так, обратитесь в тех поддержку!';}
 	
-    $foodTransport = mysqli_query($connection, "SELECT transport FROM costs WHERE id_cost=2");
+    $foodTransport = mysqli_query($connection, "SELECT transport FROM costs WHERE id_cost='$userId[0]'");
 	if($foodTransport){
 		$rowTransport = mysqli_fetch_row($foodTransport);
 	}else{echo 'С вашими данными что-то не так, обратитесь в тех поддержку!';}
 	
-    $foodEntertainment = mysqli_query($connection, "SELECT entertainment FROM costs WHERE id_cost=2");
+    $foodEntertainment = mysqli_query($connection, "SELECT entertainment FROM costs WHERE id_cost='$userId[0]'");
 	if($foodEntertainment){
 		$rowEntertainment = mysqli_fetch_row($foodEntertainment);
 	}else{echo 'С вашими данными что-то не так, обратитесь в тех поддержку!';}
   
-    $foodPets = mysqli_query($connection, "SELECT pets FROM costs WHERE id_cost=2");
+    $foodPets = mysqli_query($connection, "SELECT pets FROM costs WHERE id_cost='$userId[0]'");
 	if($foodPets){
 		$rowPets = mysqli_fetch_row($foodPets);
 	}else{echo 'С вашими данными что-то не так, обратитесь в тех поддержку!';}
   
-    $Car = mysqli_query($connection, "SELECT car FROM costs WHERE id_cost=2");
+    $Car = mysqli_query($connection, "SELECT car FROM costs WHERE id_cost='$userId[0]'");
 	if($foodPets){
 		$rowCar = mysqli_fetch_row($Car);
 	}else{echo 'С вашими данными что-то не так, обратитесь в тех поддержку!';}
   
-    $Present = mysqli_query($connection, "SELECT present FROM costs WHERE id_cost=2");
+    $Present = mysqli_query($connection, "SELECT present FROM costs WHERE id_cost='$userId[0]'");
 	if($Present){
 		$rowPresent = mysqli_fetch_row($Present);
 	}else{echo 'С вашими данными что-то не так, обратитесь в тех поддержку!';}
 	
-    $Other = mysqli_query($connection, "SELECT other FROM costs WHERE id_cost=2");
+    $Other = mysqli_query($connection, "SELECT other FROM costs WHERE id_cost='$userId[0]'");
 	if($Other){
 		$rowOther = mysqli_fetch_row($Other);
 	}else{echo 'С вашими данными что-то не так, обратитесь в тех поддержку!';}
@@ -156,7 +163,7 @@ if(!empty($_POST['to_push'])){
     <meta name="author" lang = "ru" content="Елизавета Медведева">
 </head>
 <body>
-<form action="../php/addingExpenses.php" method="POST" id="form">
+<form action="../php/addingCosts.php" method="POST" id="form">
     <br>
     <br>
     <span class="info-text">Укажите, сколько вы потратили:</span><br/><br/>

@@ -1,5 +1,5 @@
 <?php
-require "connection.php";
+require "db.php";
 $data = $_POST;
 if (isset ($_SESSION['login'])) {
     echo "вы уже авторизованы";
@@ -8,17 +8,15 @@ if (isset($data['do_login'])) {
     if (!empty($_POST['login']) && !empty($_POST['password'])){
         $login = htmlspecialchars($_POST['login']);
         $password = htmlspecialchars($_POST['password']);
-        $query = mysqli_query($link, "SELECT * FROM `users` WHERE email='".$login."' AND password = '".$password."' ");
+        $query = mysqli_query($connection, "SELECT * FROM `users` WHERE email='".$login."' AND password = '".$password."' ");
         $numrows = mysqli_num_rows($query);
         if ($numrows != 0){
-            echo "такой логин существует";
             while ($row = mysqli_fetch_assoc($query)){
                 $db_login = $row['email'];
                 $db_password = $row['password'];
             }
             if ($login == $db_login && $password == $db_password){
-                echo "все совпало, крутяк";
-                $_SESSION["login"] = $login;
+                $_SESSION['login'] = $login;
                 header('location: ../html/mainPage.html');
             } else echo "Вы неправильно ввели логин или пароль";
         }

@@ -52,6 +52,5 @@ function removeAll($connec){
 	
 }
 
-
 ?>
 

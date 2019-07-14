@@ -6,7 +6,7 @@ if(!empty($_POST['to_push'])){
 	if(!empty($activationKey) && isset($activationKey) && mysqli_num_rows($count) == 1){
 			$sql = "UPDATE users SET activation=0 WHERE activation='$activationKey'";
 			if (mysqli_query($connection, $sql)) {
-				header('Location: ../php/first.php');
+				header('Location: ../php/login.php');
 			}else{echo "Error: " . $sql . "<br>" . mysqli_error($connection);}
 			}else{ echo 'Такого ключа нет!';}
 			}
