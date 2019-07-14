@@ -1,6 +1,7 @@
-body{
+body {
     background-color: #ece2ff;
 }
+
 table {
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     font-size: 19px;
@@ -8,6 +9,7 @@ table {
     border-spacing: 1px 0px;
     margin: auto;
 }
+
 th, td:first-child {
     background: white;
     color: black;
@@ -16,14 +18,16 @@ th, td:first-child {
     border-bottom: 1px solid #a566c7;
 }
 
-.tittleName{
+.tittleName {
     font-size: 20px;
     border: solid 3px #a566c7;
 }
-.picture{
+
+.picture {
     text-align: center;
     margin-top: 250px;
 }
+
 th, td {
     background: white;
     border-style: solid;
@@ -31,19 +35,21 @@ th, td {
     border-color: white;
     border-bottom: 1px solid #a566c7;
 }
+
 td {
 }
+
 th:first-child, td:first-child {
     text-align: left;
 }
 
-.button_goals{
+.button_goals {
     background-color: #a566c7; /* Цвет фона */
     color: white; /* Цвет текста */
     border: solid 1px #d0c7e2;
     margin-left: 40%;
     height: 40px; /*ширина поля*/
     width: 15%; /*размер поля по горизонтали */
-    font:icon;
+    font: icon;
     font-size: 20px;
 }

@@ -20,6 +20,7 @@ if ($check) {
 } else {
     echo "Error: " . $check . "<br>" . mysqli_error($connection);
 }
+
 //сравниваем месяц в бд и текущий
 $checkTwo = mysqli_query($link, "SELECT current_month FROM goals WHERE current_month=$dateN");
 $rowTwo = mysqli_fetch_row($checkTwo);

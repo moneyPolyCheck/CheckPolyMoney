@@ -3,18 +3,18 @@ body {
     background-color: #d0c7e2;
 }
 
-.picture{
+.picture {
     text-align: center;
     margin-top: 250px;
 }
 
-.text-center{
+.text-center {
     text-align: center;
     font-family: Arial, serif;
     font-size: 21px;
 }
 
-.input{
+.input {
     background-color: #a566c7; /* Цвет фона */
     color: white; /* Цвет текста */
     border: solid 1px #d0c7e2;
@@ -23,6 +23,6 @@ body {
     margin-top: 30px;
     height: 40px; /*ширина поля*/
     width: 15%; /*размер поля по горизонтали */
-    font:icon;
+    font: icon;
     font-size: 20px;
 }
