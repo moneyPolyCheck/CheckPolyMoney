@@ -1,7 +1,6 @@
 <?php
 require "db.php";
 //Подключаем id
-session_start();
 $justVar = $_SESSION['login'];
 include "functionForAddingExpenses.php";
 $customId = mysqli_query($connection, "SELECT id FROM users WHERE email='$justVar'");
@@ -220,7 +219,7 @@ if(!empty($_POST['to_push'])){
             <td><input type="text" name="other" size="5"> руб. Вы потратили на эту категорию: <?php echo $rowOther[0]; ?> руб</td>
         </tr>
 		<tr>
-            <td><input type="submit" name = "to_push" value="Ввести" class="inputField"></td>
+            <td><input type="submit" name = "to_push" value="Ввести" class="inputField" onclick=window.open('../html/mainPage.html')></td>
         </tr>
     </table>
 </form>

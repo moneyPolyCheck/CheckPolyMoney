@@ -37,8 +37,5 @@ if (isset($data['do_login'])) {
 <input  class="inputField" name = "do_login" type="submit" value="Вход ">
 <a href="../html/forgetPassword.html" class="forgotPassword" >Забыли пароль?</a>
 <input class="registration" type="button"  value="Регистрация"  onclick=window.open('../php/checkIn.php',"_self")>
-
-
-
 </form>
 </body>

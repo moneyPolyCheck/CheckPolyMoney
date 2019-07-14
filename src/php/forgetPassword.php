@@ -1,32 +1,43 @@
-//TODO
-<form name="form1" method="post">
-    <p><i>Логин </i><input type="text" name="username" size="30" /></p>
-    <p>
-        <input type="submit" value="Восстановление" size="30">
-    </p>
-</form>
 <?php
-$connect=mysqli_connect('localhost', 'root', '', 'users');
-$username = mysqli_real_escape_string($connect,$_POST['username']);
 
-$zapros = "SELECT `id` FROM `checkIn` WHERE `email`='{$username}' LIMIT 1";
-    $sql = mysqli_query($connect,$zapros) or die(mysqli_error());
-    if (mysqli_num_rows($sql)==1)
-    {
-        $simv = array ("92", "83", "7", "66", "45", "4", "36", "22", "1", "0",
-            "k", "l", "m", "n", "o", "p", "q", "1r", "3s", "a", "b", "c", "d", "5e", "f", "g", "h", "i", "j6", "t", "u", "v9", "w", "x5", "6y", "z5");
-        for ($k = 0; $k < 8; $k++)
-        {
-            shuffle ($simv);
+require_once('../phpmailer/PHPMailerAutoload.php');
+require_once('connection.php');
+
+$mail = new PHPMailer;
+$mail->CharSet = 'utf-8';
+
+if (!empty($_POST['username'])){
+    $email = $_POST['username'];
+    $regex = '/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/';
+    if(preg_match($regex, $email)){
+        $mail->isSMTP();                                      // Set mailer to use SMTP
+        $mail->Host = 'smtp.mail.ru';                                                                                            // Specify main and backup SMTP servers
+        $mail->SMTPAuth = true;                               // Enable SMTP authentication
+        $mail->Username = 'test_d_b'; // Ваш логин от почты с которой будут отправляться письма
+        $mail->Password = 'mamafoo1234'; // Ваш пароль от почты с которой будут отправляться письма
+        $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+        $mail->Port = 465; // TCP port to connect to / этот порт может отличаться у других провайдеров
+
+        $mail->setFrom('test_d_b@mail.ru'); // от кого будет уходить письмо?
+        $mail->addAddress($email);     // Кому будет уходить письмо
+        $mail->isHTML(true);
+        $login = htmlspecialchars($_POST['username']);// Set email format to HTML
+        $query = "SELECT password FROM `users` WHERE email = '$email'";
+        $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+        if ($result){
+            $row = mysqli_fetch_array($result);
+            $mail->Subject = 'Восстановление пароля';
+            $mail->Body = ' Ваш пароль на сайте checkpolycash.ru ' . $row[0];
+            $mail->AltBody = '';
+        } else echo "<p> такого логина не существует </p> ";
+
+        if (!$mail->send()) {
+            echo 'Error';
+        } else {
+            header('location: ../html/thank-you.html');
         }
-        $zapros = "UPDATE `table1`SET  `pass`='{$string}' WHERE `name`='{$username}' ";
-        $sql = mysqli_query($connect,$zapros) or die(mysqli_error());
+    } else echo "Вы ввели неправильный email";
+}
+else echo "Вы не ввели свой логин";
 
-$zapros = "SELECT `email` FROM `table1` WHERE `name`='{$username}' LIMIT 1";
-    $sql = mysqli_query($connect,$zapros)or die(mysqli_error());
-$r = mysqli_fetch_assoc($sql);
-$mail = $r['email'];
-mail($mail, "Запрос на восстановление пароля", "Hello, $username. Your new password: $string");
-    }
-echo "На ваш почтовый ящик было отправлено письмо с новый паролем";
 ?>
