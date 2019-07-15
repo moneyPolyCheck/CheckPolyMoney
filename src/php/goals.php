@@ -5,7 +5,11 @@ $sql_id = mysqli_query($link, "SELECT id FROM users WHERE email='$login'");
 $id = mysqli_fetch_row($sql_id);
 $sql = mysqli_query($link, "SELECT id FROM goals WHERE id ='$id[0]'");
 if (mysqli_num_rows($sql) == 0) {
-    $id = "INSERT INTO goals `id` VALUES($id[0])";
+    $id_add = "INSERT INTO goals `id` VALUES($id[0])";
+    if (mysqli_query($link, $id_add)) {
+    } else {
+        echo "Error: " . $id_add . "<br>" . mysqli_error($link);
+    }
 }
 
 date_default_timezone_set('Russia/Moscow');
