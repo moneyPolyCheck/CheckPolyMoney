@@ -2,7 +2,7 @@
 require "db.php";
 $data = $_POST;
 if (isset ($_SESSION['login'])) {
-    echo "вы уже авторизованы";
+	header('location: ../html/mainPage.html');
 }
 if (isset($data['do_login'])) {
     if (!empty($_POST['login']) && !empty($_POST['password'])) {
