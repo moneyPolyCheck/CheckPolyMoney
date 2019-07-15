@@ -29,57 +29,110 @@ if ($row[0] != $rowTwo[0]) {
     $checkTwo = mysqli_query($connection, "UPDATE goals SET current_month = $dateN");
     removeAll($connection);
 }
-
+$error = 1;
+$pattern = '#^[0-9]+$#';
 if (isset($_POST["to_push"])) {
     if (!empty($_POST['food'])) {
-        $sql1 = mysqli_query($link, "UPDATE goals SET food = '{$_POST['food']}'");
+        if (preg_match($pattern, $_POST['food'])) {
+            $sql1 = mysqli_query($link, "UPDATE goals SET food = '{$_POST['food']}'");
+        } else {
+            $error = 0;
+        }
     }
 
     if (!empty($_POST['household_goods'])) {
-        $sql = mysqli_query($link, "UPDATE goals SET household_goods = '{$_POST['household_goods']}'");
+        if (preg_match($pattern, $_POST['household_goods'])) {
+            $sql = mysqli_query($link, "UPDATE goals SET household_goods = '{$_POST['household_goods']}'");
+        } else {
+            $error = 0;
+        }
     }
 
     if (!empty($_POST['housing'])) {
-        $sql = mysqli_query($link, "UPDATE goals SET housing = '{$_POST['housing']}'");
+        if (preg_match($pattern, $_POST['housing'])) {
+            $sql = mysqli_query($link, "UPDATE goals SET housing = '{$_POST['housing']}'");
+        } else {
+            $error = 0;
+        }
     }
 
     if (!empty($_POST['clothes'])) {
-        $sql = mysqli_query($link, "UPDATE goals SET clothes = '{$_POST['clothes']}'");
+        if (preg_match($pattern, $_POST['clothes'])) {
+            $sql = mysqli_query($link, "UPDATE goals SET clothes = '{$_POST['clothes']}'");
+        } else {
+            $error = 0;
+        }
     }
 
     if (!empty($_POST['pets'])) {
-        $sql = mysqli_query($link, "UPDATE goals SET pets = '{$_POST['pets']}'");
+        if (preg_match($pattern, $_POST['pets'])) {
+            $sql = mysqli_query($link, "UPDATE goals SET pets = '{$_POST['pets']}'");
+        } else {
+            $error = 0;
+        }
     }
 
     if (!empty($_POST['health'])) {
-        $sql = mysqli_query($link, "UPDATE goals SET health = '{$_POST['health']}'");
+        if (preg_match($pattern, $_POST['health'])) {
+            $sql = mysqli_query($link, "UPDATE goals SET health = '{$_POST['health']}'");
+        } else {
+            $error = 0;
+        }
     }
 
     if (!empty($_POST['other'])) {
-        $sql = mysqli_query($link, "UPDATE goals SET other = '{$_POST['other']}'");
+        if (preg_match($pattern, $_POST['other'])) {
+            $sql = mysqli_query($link, "UPDATE goals SET other = '{$_POST['other']}'");
+        } else {
+            $error = 0;
+        }
     }
 
     if (!empty($_POST['sport'])) {
-        $sql = mysqli_query($link, "UPDATE goals SET sport = '{$_POST['sport']}'");
+        if (preg_match($pattern, $_POST['sport'])) {
+            $sql = mysqli_query($link, "UPDATE goals SET sport = '{$_POST['sport']}'");
+        } else {
+            $error = 0;
+        }
     }
 
     if (!empty($_POST['transport'])) {
-        $sql = mysqli_query($link, "UPDATE goals SET transport = '{$_POST['transport']}'");
+        if (preg_match($pattern, $_POST['transport'])) {
+            $sql = mysqli_query($link, "UPDATE goals SET transport = '{$_POST['transport']}'");
+        } else {
+            $error = 0;
+        }
     }
 
     if (!empty($_POST['entertainment'])) {
-        $sql = mysqli_query($link, "UPDATE goals SET entertainment = '{$_POST['entertainment']}'");
+        if (preg_match($pattern, $_POST['entertainment'])) {
+            $sql = mysqli_query($link, "UPDATE goals SET entertainment = '{$_POST['entertainment']}'");
+        } else {
+            $error = 0;
+        }
     }
 
     if (!empty($_POST['car'])) {
-        $sql = mysqli_query($link, "UPDATE goals SET car = '{$_POST['car']}'");
+        if (preg_match($pattern, $_POST['car'])) {
+            $sql = mysqli_query($link, "UPDATE goals SET car = '{$_POST['car']}'");
+        } else {
+            $error = 0;
+        }
     }
 
     if (!empty($_POST['present'])) {
-        $sql = mysqli_query($link, "UPDATE goals SET present = '{$_POST['present']}'");
+        if (preg_match($pattern, $_POST['present'])) {
+            $sql = mysqli_query($link, "UPDATE goals SET present = '{$_POST['present']}'");
+        } else {
+            $error = 0;
+        }
     }
+        if ($error == 1){
+            header('Location: ../html/mainPage.html');
+        } else {
+            header('Location: ../html/sorry.html');
+        }
+
 }
 mysqli_close($link);
 ?>
-
-

@@ -24,7 +24,6 @@ if ($check) {
     if (empty($row[0]) == TRUE) {
         echo ' где-то здесь';
         $my = mysqli_query($connection, "UPDATE costs SET current_month = $dateN");
-
     }
 } else {
     echo "Error: " . $check . "<br>" . mysqli_error($connection);
@@ -187,92 +186,124 @@ mysqli_close($connection);
     <meta name="keywords" content="Ваши расходы">
     <meta name="discription" content="Отслеживайте бюджет, зарегистрировавшись на check_poly_cash.ru">
     <meta name="author" lang="ru" content="Елизавета Медведева">
+    <link rel="stylesheet" href=../css/goals.css>
 </head>
 <body>
 <form action="../php/addingCosts.php" method="POST" id="form">
-    <br>
-    <br>
-    <span class="info-text">Укажите, сколько вы потратили:</span><br/><br/>
-
-    <table>
+    <table width="65%" cellspacing="0" cellpadding="4">
+        <caption>Укажите, сколько вы потратили:</caption>
         <tr>
+            <td style="width: 10px; ">
+                <center><img src="../img/diet.png" width="45" height="45"></center>
+            </td>
             <td>Продукты:</td>
-            <td><input type="text" name="food" size="5"> руб. Вы потратили на эту категорию: <?php echo $rowFood[0]; ?>
+            <td><input type="text" name="food" class="titleName" size="10"> руб. Вы потратили на эту
+                категорию: <?php echo $rowFood[0]; ?>
                 руб
             </td>
         </tr>
-        <tr>
-        <tr>
-            <td>Хозяйственные нужды:</td>
-            <td><input type="text" name="household_goods" size="5"> руб. Вы потратили на эту
-                категорию: <?php echo $rowH_G[0]; ?> руб
-            </td>
+        <td style="width: 10px; ">
+            <center><img src="../img/mop.png" width="50" height="50"></center>
+        </td>
+        <td>Хозяйственные нужды:</td>
+        <td><input type="text" name="household_goods" class="titleName" size="10"> руб. Вы потратили на эту
+            категорию: <?php echo $rowH_G[0]; ?> руб
+        </td>
         </tr>
         <tr>
-
+            <td style="width: 10px; ">
+                <center><img src="../img/house.png" width="50" height="50"></center>
+            </td>
             <td>Дом:</td>
-            <td><input type="text" name="housing" size="5"> руб. Вы потратили на эту
+            <td><input type="text" name="housing" class="titleName" size="10"> руб. Вы потратили на эту
                 категорию: <?php echo $rowHousing[0]; ?> руб
             </td>
         </tr>
         <tr>
+            <td style="width: 10px; ">
+                <center><img src="../img/polo-shirt.png" width="50" height="50"></center>
+            </td>
             <td>Одежда:</td>
-            <td><input type="text" name="clothes" size="5"> руб. Вы потратили на эту
+            <td><input type="text" name="clothes" class="titleName" size="10"> руб. Вы потратили на эту
                 категорию: <?php echo $rowClothes[0]; ?> руб
             </td>
         </tr>
         <tr>
+            <td style="width: 10px; ">
+                <center><img src="../img/heart.png" width="50" height="50"></center>
+            </td>
             <td>Здоровье:</td>
-            <td><input type="text" name="health" size="5"> руб. Вы потратили на эту
+            <td><input type="text" name="health" class="titleName" size="10"> руб. Вы потратили на эту
                 категорию: <?php echo $rowHealth[0]; ?> руб
             </td>
         </tr>
         <tr>
+            <td style="width: 10px; ">
+                <center><img src="../img/muscle.png" width="50" height="50"></center>
+            </td>
             <td>Спорт:</td>
-            <td><input type="text" name="sport" size="5"> руб. Вы потратили на эту
+            <td><input type="text" name="sport" class="titleName" size="10"> руб. Вы потратили на эту
                 категорию: <?php echo $rowSport[0]; ?> руб
             </td>
         </tr>
         <tr>
+            <td style="width: 10px; ">
+                <center><img src="../img/bus.png" width="50" height="50"></center>
+            </td>
             <td>Транспорт:</td>
-            <td><input type="text" name="transport" size="5"> руб. Вы потратили на эту
+            <td><input type="text" name="transport" class="titleName" size="10"> руб. Вы потратили на эту
                 категорию: <?php echo $rowTransport[0]; ?> руб
             </td>
         </tr>
         <tr>
+            <td style="width: 10px; ">
+                <center><img src="../img/popcorn.png" width="50" height="50"></center>
+            </td>
             <td>Равзлечения:</td>
-            <td><input type="text" name="entertainment" size="5"> руб. Вы потратили на эту
+            <td><input type="text" name="entertainment" class="titleName" size="10"> руб. Вы потратили на эту
                 категорию: <?php echo $rowEntertainment[0]; ?> руб
             </td>
         </tr>
         <tr>
+            <td style="width: 10px; ">
+                <center><img src="../img/dog.png" width="50" height="50"></center>
+            </td>
             <td>Животные:</td>
-            <td><input type="text" name="pets" size="5"> руб. Вы потратили на эту категорию: <?php echo $rowPets[0]; ?>
+            <td><input type="text" name="pets" class="titleName" size="10"> руб. Вы потратили на эту
+                категорию: <?php echo $rowPets[0]; ?>
                 руб
             </td>
         </tr>
         <tr>
+            <td style="width: 10px; ">
+                <center><img src="../img/car.png" width="50" height="50"></center>
+            </td>
             <td>Машина:</td>
-            <td><input type="text" name="car" size="5"> руб. Вы потратили на эту категорию: <?php echo $rowCar[0]; ?>
+            <td><input type="text" name="car" class="titleName" size="10"> руб. Вы потратили на эту
+                категорию: <?php echo $rowCar[0]; ?>
                 руб
             </td>
         </tr>
         <tr>
+            <td style="width: 10px; ">
+                <center><img src="../img/giftbox.png" width="50" height="50"></center>
+            </td>
             <td> Подарки :</td>
-            <td><input type="text" name="present" size="5"> руб. Вы потратили на эту
+            <td><input type="text" name="present" class="titleName" size="10"> руб. Вы потратили на эту
                 категорию: <?php echo $rowPresent[0]; ?> руб
             </td>
         </tr>
         <tr>
+            <td style="width: 10px; ">
+                <center><img src="../img/bank.png" width="50" height="50"></center>
+            </td>
             <td> Прочее :</td>
-            <td><input type="text" name="other" size="5"> руб. Вы потратили на эту
+            <td><input type="text" name="other" class="titleName" size="10"> руб. Вы потратили на эту
                 категорию: <?php echo $rowOther[0]; ?> руб
             </td>
         </tr>
-        <tr>
-            <td><input type="submit" name="to_push" value="Ввести" class="inputField"
-                       onclick=window.open('../html/mainPage.html')></td>
-        </tr>
     </table>
+    <input type="submit"  class="button_goals" name="to_push" value="Ввести"
+           onclick=window.open('../html/mainPage.html')>
 </form>
 </body>
