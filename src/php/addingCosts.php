@@ -9,7 +9,7 @@ $userId = mysqli_fetch_row($customId);
 $sql = mysqli_query($connection, "SELECT id_cost FROM costs WHERE id_cost='$userId[0]'");
 $rowq = mysqli_fetch_row($sql);
 if (mysqli_num_rows($sql) == 0) {
-    $id = "INSERT INTO costs(id_cost) VALUES($userId[0])";
+    $id = "INSERT INTO costs (id_cost) VALUES($userId[0])";
     if (mysqli_query($connection, $id)) {
     } else {
         echo "Error: " . $id . "<br>" . mysqli_error($connection);

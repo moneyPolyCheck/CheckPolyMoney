@@ -5,7 +5,7 @@ $sql_id = mysqli_query($link, "SELECT id FROM users WHERE email='$login'");
 $id = mysqli_fetch_row($sql_id);
 $sql = mysqli_query($link, "SELECT id FROM goals WHERE id ='$id[0]'");
 if (mysqli_num_rows($sql) == 0) {
-    $id_add = "INSERT INTO goals `id` VALUES($id[0])";
+    $id_add = "INSERT INTO goals (id) VALUES($id[0])";
     if (mysqli_query($link, $id_add)) {
     } else {
         echo "Error: " . $id_add . "<br>" . mysqli_error($link);
@@ -33,6 +33,7 @@ if ($row[0] != $rowTwo[0]) {
     $checkTwo = mysqli_query($connection, "UPDATE goals SET current_month = $dateN");
     removeAll($connection);
 }
+
 $error = 1;
 $pattern = '#^[0-9]+$#';
 if (isset($_POST["to_push"])) {
