@@ -15,7 +15,10 @@ if (isset($data['do_login'])) {
                 $db_login = $row['email'];
                 $db_password = $row['password'];
             }
-            if ($login == $db_login && $password == $db_password) {
+			$querye = mysqli_query($connection, "SELECT activation FROM `users` WHERE email='" . $login ."' ");
+			$rowTwo = mysqli_fetch_row($querye);
+			$act = $rowTwo[0];
+            if ($login == $db_login && $password == $db_password && $act=='0') {
                 $_SESSION['login'] = $login;
                 header('location: ../html/mainPage.html');
             } else echo "Вы неправильно ввели логин или пароль";

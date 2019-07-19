@@ -20,7 +20,7 @@ body {
 #navbar {
     height: 35px;
     background-color: #a566c7;
-    padding-left: 25px;
+    padding-left: 120px;
     min-width: 470px;
 }
 #navbar li {
@@ -30,6 +30,7 @@ body {
     font-size: 20px;
 }
 #navbar li a {
+    margin-left: 100px;
     display: block;
     padding: 6px;
     width: 100px;
