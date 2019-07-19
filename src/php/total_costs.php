@@ -289,6 +289,7 @@ if (mysqli_num_rows($sql_costs) != 0) {
             <td><p><?php echo $costs_arr[8]; ?></p></td>
         </tr>
         <tr>
+            
             <td style="width: 10px; ">
                 <center><img src=<?php echo $costs_src_way[7]; ?> width="50" height="50"></center>
             </td>
