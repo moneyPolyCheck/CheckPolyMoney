@@ -2,7 +2,6 @@
 require "db.php";
 //Подключаем id
 $justVar = $_SESSION['login'];
-include "functionForAddingExpenses.php";
 $customId = mysqli_query($connection, "SELECT id FROM users WHERE email='$justVar'");
 $userId = mysqli_fetch_row($customId);
 //Подключаем id
@@ -22,7 +21,6 @@ $check = mysqli_query($connection, "SELECT current_month FROM costs WHERE id_cos
 $row = mysqli_fetch_row($check);
 if ($check) {
     if (empty($row[0]) == TRUE) {
-        echo ' где-то здесь';
         $my = mysqli_query($connection, "UPDATE costs SET current_month = $dateN");
     }
 } else {
@@ -34,59 +32,71 @@ $rowTwo = mysqli_fetch_row($checkTwo);
 if ($row[0] != $rowTwo[0]) {
     //Заменяем месяца
     $checkTwo = mysqli_query($connection, "UPDATE costs SET current_month = $dateN");
-    removeAll($connection);
+    mysqli_query($connec, "UPDATE costs SET food = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connec, "UPDATE costs SET household_goods = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connec, "UPDATE costs SET housing = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connec, "UPDATE costs SET clothes = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connec, "UPDATE costs SET car = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connec, "UPDATE costs SET pets = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connec, "UPDATE costs SET present = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connec, "UPDATE costs SET other = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connec, "UPDATE costs SET entertainment = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connec, "UPDATE costs SET transport = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connec, "UPDATE costs SET sport = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connec, "UPDATE costs SET health = 0 WHERE id_cost='$userId[0]'");
 }
 
 //добавляем расходы
 if (!empty($_POST['to_push'])) {
     if (!empty($_POST['food'])) {
         $food = $_POST['food'];
-        addFood($connection, $food);
+        $id2 = mysqli_query($connection,"UPDATE costs SET food = food+$food WHERE id_cost='$userId[0]'");
     }
     if (!empty($_POST['housing'])) {
         $housing = $_POST['housing'];
-        addHousing($connection, $housing);
+        $id2 = mysqli_query($connection,"UPDATE costs SET housing = housing+$housing WHERE id_cost='$userId[0]'");
     }
     if (!empty($_POST['household_goods'])) {
         $household_goods = $_POST['household_goods'];
-        addHousehold_goods($connection, $household_goods);
+        $id2 = mysqli_query($connection,"UPDATE costs SET household_goods = household_goods+$household_goods WHERE id_cost='$userId[0]'");
     }
     if (!empty($_POST['clothes'])) {
         $clothes = $_POST['clothes'];
-        addClothes($connection, $clothes);
+        $id2 = mysqli_query($connection,"UPDATE costs SET clothes = clothes+$clothes WHERE id_cost='$userId[0]'");
     }
     if (!empty($_POST['health'])) {
         $health = $_POST['health'];
-        addHealth($connection, $health);
+        $id2 = mysqli_query($connection,"UPDATE costs SET health = health+$health WHERE id_cost='$userId[0]'");
     }
 
     if (!empty($_POST['sport'])) {
         $sport = $_POST['sport'];
-        addSport($connection, $sport);
-    }
+        $id2 = mysqli_query($connection,"UPDATE costs SET sport = sport+$sport WHERE id_cost='$userId[0]'");
+  }
     if (!empty($_POST['transport'])) {
         $transport = $_POST['transport'];
-        addTransport($connection, $transport);
+        $id2 = mysqli_query($connection,"UPDATE costs SET transport = transport+$transport WHERE id_cost='$userId[0]'");
     }
     if (!empty($_POST['entertainment'])) {
         $entertainment = $_POST['entertainment'];
-        addEntertainment($connection, $entertainment);
+        $id2 = mysqli_query($connection,"UPDATE costs SET entertainment = entertainment+$entertainment WHERE id_cost='$userId[0]'");
     }
     if (!empty($_POST['pets'])) {
         $pets = $_POST['pets'];
-        addPets($connection, $pets);
+        $id2 = mysqli_query($connection,"UPDATE costs SET pets = pets+$pets WHERE id_cost='$userId[0]'");
+
     }
     if (!empty($_POST['car'])) {
         $car = $_POST['car'];
-        addCar($connection, $car);
+        $id2 = mysqli_query($connection,"UPDATE costs SET car = car+$car WHERE id_cost='$userId[0]'");
     }
     if (!empty($_POST['present'])) {
         $present = $_POST['present'];
-        addPresent($connection, $present);
+          $id2 = mysqli_query($connection,"UPDATE costs SET present = present+$present WHERE id_cost='$userId[0]'");
     }
     if (!empty($_POST['other'])) {
         $other = $_POST['other'];
-        addOther($connection, $other);
+          $id2 = mysqli_query($connection,"UPDATE costs SET other = other+$other WHERE id_cost='$userId[0]'");
     }
 }
 //блок, где введеные данные выводятся на страницу
@@ -190,7 +200,6 @@ mysqli_close($connection);
 </head>
 <body>
 <ul id="navbar">
-    <li><a href="#">Главная</a></li>
 </ul>
 <div id="sidebar">
     <div id="button" onclick="openMenu()">
@@ -200,7 +209,7 @@ mysqli_close($connection);
     </div>
     <ul>
         <li>Навигация</li>
-        <li><a href="../html/goals.html">Мои цели</a></li>
+        <li><a href="../php/addingCosts.php">Мои расходы</a></li>
         <li><a href="../php/total_costs.php">Мои итоги</a></li>
         <li><a href="../php/logout.php">Выход</a></li>
     </ul>
