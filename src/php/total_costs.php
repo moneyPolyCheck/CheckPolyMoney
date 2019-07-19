@@ -355,12 +355,13 @@ if (mysqli_num_rows($sql_costs) != 0) {
     </table>
 </form>
 <div id="container">
+
     <div id="col1">
-        Колонка 1</div>
+        <div id="black"></div>
+        <div id="red"></div>
+    </div>
     <div id="col2">
         <canvas id="can">
-
-
 
             <script>
                 var canvas = document.getElementById("can");
@@ -403,8 +404,8 @@ if (mysqli_num_rows($sql_costs) != 0) {
             </script>
 
             Колонка 2</div>
-    <div class="clear">&nbsp;</div>
 </div>
+
 
 </body>
 </html>

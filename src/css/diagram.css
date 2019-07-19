@@ -1,14 +1,14 @@
-#black {
-    height:10px;
-    width:10px;
+
+
+#black{
+    height: 5px;
+    width: 5px;
     background: #000;
-    margin-left: 46%;
-    margin-top: 0px;
 }
 
 #red {
     height:5px;
-    width:10px;
+    width:5px;
     background: #FF0000;
     text-align: center;
     margin-left: 50%;
@@ -24,8 +24,7 @@ table {
 }
 
 #can{
-    padding-right: 0;
-    margin-left: 30%;
+    margin-left: 155px;
     margin-top: 0px;
     width: 400px;
     display: block;
@@ -79,15 +78,14 @@ table {
 
 
 #container {
-    border-left: 500px solid maroon;
-    background: #f0f0f0;
+    border-left: 535px solid #ffffff;
+    background: #ffffff;
 }
 
 
 
 #col1 {
-
-    width: 90px; float: left; margin-left: -100px; color: #fff;
+    width: 80px; float: left; margin-left: -138px; color: rgba(0, 0, 0, 0.97);
 }
 * HTML #col1 {
     margin-left: -200px;
