@@ -189,6 +189,9 @@ mysqli_close($connection);
     <link rel="stylesheet" href="../css/goals.css">
 </head>
 <body>
+<ul id="navbar">
+    <li><a href="#">Главная</a></li>
+</ul>
 <div id="sidebar">
     <div id="button" onclick="openMenu()">
         <span></span>
@@ -198,7 +201,7 @@ mysqli_close($connection);
     <ul>
         <li>Навигация</li>
         <li><a href="../php/addingCosts.php">Мои расходы</a></li>
-        <li><a href="../php/total.php">Мои итоги</a></li>
+        <li><a href="../php/total_costs.php">Мои итоги</a></li>
         <li><a href="../php/logout.php">Выход</a></li>
     </ul>
 </div>
