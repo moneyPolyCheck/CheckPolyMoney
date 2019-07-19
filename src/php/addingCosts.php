@@ -182,13 +182,31 @@ mysqli_close($connection);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ваши расходы</title>
-    <link rel="stylesheet" href="../css/addingExpenses.css">
+	<link rel="stylesheet" href="../css/menu.css">
     <meta name="keywords" content="Ваши расходы">
     <meta name="discription" content="Отслеживайте бюджет, зарегистрировавшись на check_poly_cash.ru">
     <meta name="author" lang="ru" content="Елизавета Медведева">
-    <link rel="stylesheet" href=../css/goals.css>
+    <link rel="stylesheet" href="../css/goals.css">
 </head>
 <body>
+<div id="sidebar">
+    <div id="button" onclick="openMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul>
+        <li>Навигация</li>
+        <li><a href="../php/addingCosts.php">Мои расходы</a></li>
+        <li><a href="../php/total.php">Мои итоги</a></li>
+        <li><a href="../php/logout.php">Выход</a></li>
+    </ul>
+</div>
+<script>
+    function openMenu() {
+        document.getElementById("sidebar").classList.toggle('active');
+    }
+</script>
 <form action="../php/addingCosts.php" method="POST" id="form">
     <table width="65%" cellspacing="0" cellpadding="4">
         <caption>Укажите, сколько вы потратили:</caption>
