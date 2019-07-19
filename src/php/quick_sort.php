@@ -10,6 +10,7 @@ function quickSort(&$mas, $s, $f, &$symb, &$way)
 
 function partition(&$mas, $s, $f, &$symb, &$way)
 {
+
     $q = $s;
 
     for ($i = $s; $i < $f; $i++) {

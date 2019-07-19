@@ -46,6 +46,7 @@ if (mysqli_num_rows($sql_costs) != 0) {
         $costs_arr[4] = $row_health[0];
     }
 
+
     $sql_sport = mysqli_query($link, "SELECT sport FROM costs WHERE id_cost ='$id[0]'");
     $row_sport = mysqli_fetch_array($sql_sport);
     if ($row_sport[0] != null) {

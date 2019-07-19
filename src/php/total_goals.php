@@ -121,6 +121,7 @@ if (mysqli_num_rows($sql_goals) != 0) {
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
