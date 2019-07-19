@@ -200,7 +200,7 @@ mysqli_close($connection);
     </div>
     <ul>
         <li>Навигация</li>
-        <li><a href="../php/addingCosts.php">Мои расходы</a></li>
+        <li><a href="../html/goals.html">Мои цели</a></li>
         <li><a href="../php/total_costs.php">Мои итоги</a></li>
         <li><a href="../php/logout.php">Выход</a></li>
     </ul>
@@ -324,7 +324,6 @@ mysqli_close($connection);
             </td>
         </tr>
     </table>
-    <input type="submit"  class="button_goals" name="to_push" value="Ввести"
-           onclick=window.open('../html/mainPage.html')>
+    <input type="submit"  class="button_goals" name="to_push" value="Ввести">
 </form>
 </body>
