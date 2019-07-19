@@ -32,18 +32,18 @@ $rowTwo = mysqli_fetch_row($checkTwo);
 if ($row[0] != $rowTwo[0]) {
     //Заменяем месяца
     $checkTwo = mysqli_query($connection, "UPDATE costs SET current_month = $dateN");
-    mysqli_query($connec, "UPDATE costs SET food = 0 WHERE id_cost='$userId[0]'");
-	mysqli_query($connec, "UPDATE costs SET household_goods = 0 WHERE id_cost='$userId[0]'");
-	mysqli_query($connec, "UPDATE costs SET housing = 0 WHERE id_cost='$userId[0]'");
-	mysqli_query($connec, "UPDATE costs SET clothes = 0 WHERE id_cost='$userId[0]'");
-	mysqli_query($connec, "UPDATE costs SET car = 0 WHERE id_cost='$userId[0]'");
-	mysqli_query($connec, "UPDATE costs SET pets = 0 WHERE id_cost='$userId[0]'");
-	mysqli_query($connec, "UPDATE costs SET present = 0 WHERE id_cost='$userId[0]'");
-	mysqli_query($connec, "UPDATE costs SET other = 0 WHERE id_cost='$userId[0]'");
-	mysqli_query($connec, "UPDATE costs SET entertainment = 0 WHERE id_cost='$userId[0]'");
-	mysqli_query($connec, "UPDATE costs SET transport = 0 WHERE id_cost='$userId[0]'");
-	mysqli_query($connec, "UPDATE costs SET sport = 0 WHERE id_cost='$userId[0]'");
-	mysqli_query($connec, "UPDATE costs SET health = 0 WHERE id_cost='$userId[0]'");
+    mysqli_query($connection, "UPDATE costs SET food = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connection, "UPDATE costs SET household_goods = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connection, "UPDATE costs SET housing = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connection, "UPDATE costs SET clothes = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connection, "UPDATE costs SET car = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connection, "UPDATE costs SET pets = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connection, "UPDATE costs SET present = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connection, "UPDATE costs SET other = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connection, "UPDATE costs SET entertainment = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connection, "UPDATE costs SET transport = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connection, "UPDATE costs SET sport = 0 WHERE id_cost='$userId[0]'");
+	mysqli_query($connection, "UPDATE costs SET health = 0 WHERE id_cost='$userId[0]'");
 }
 
 //добавляем расходы
