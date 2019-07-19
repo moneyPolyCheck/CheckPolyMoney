@@ -1,12 +1,13 @@
 #black {
     height:10px;
-    width:50px;
+    width:10px;
     background: #000;
-
+    margin-left: 46%;
 }
+
 #red {
-    height:20px;
-    width:20px;
+    height:5px;
+    width:10px;
     background: #FF0000;
     text-align: center;
     margin-left: 50%;
@@ -21,10 +22,9 @@ table {
 }
 
 #can{
-    padding-left: 0px;
     padding-right: 0;
-    margin-left: 33%;
-    margin-top: 200px;
+    margin-left: 30%;
+    margin-top: 0px;
     width: 400px;
     display: block;
 }

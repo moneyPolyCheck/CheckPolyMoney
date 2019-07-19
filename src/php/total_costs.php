@@ -1,8 +1,7 @@
 <?php
 require('connection.php');
 require('quick_sort.php');
-//<div id="black"><p class="text">Черный</p></div>
-//<div id="red"></div>
+//
 $login = $_SESSION['login'];
 $sql_id = mysqli_query($link, "SELECT id FROM users WHERE email='$login'");
 $id = mysqli_fetch_row($sql_id);
@@ -338,6 +337,8 @@ if (mysqli_num_rows($sql_costs) != 0) {
     </table>
 </form>
 <canvas id="can">
+    <div id="black"><p class="text">Черный</p></div>
+    <div id="red"></div>
     <script>
         var canvas = document.getElementById("can");
         var ctx = canvas.getContext("2d");
