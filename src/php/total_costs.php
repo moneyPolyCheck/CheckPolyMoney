@@ -91,7 +91,9 @@ if (mysqli_num_rows($sql_costs) != 0) {
     $min_costs = 0;
     $max_costs = 0;
 
-    quickSort($costs_arr, 0, 11, $costs_symbols, $costs_src_way);
+    $costs_arr_sort = $costs_arr;
+    $costs_symbols_sort = $costs_symbols;
+    quickSort($costs_arr_sort, 0, 11, $costs_symbols_sort, $costs_src_way);
 
     $total_costs = 0;
     for ($i = 11; $i >= 0; $i--) {
@@ -264,86 +266,85 @@ if (mysqli_num_rows($sql_costs) != 0) {
             <td style="width: 10px; ">
                 <center><img src= <?php echo $costs_src_way[11]; ?> "width=" 45" height="45"></center>
             </td>
-            <td><p><?php echo $costs_symbols[11]; ?></p></td>
-            <td><p><?php echo $costs_arr[11]; ?></p></td>
+            <td><p><?php echo $costs_symbols_sort[11]; ?></p></td>
+            <td><p><?php echo $costs_arr_sort[11]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src= <?php echo $costs_src_way[10]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $costs_symbols[10]; ?></p></td>
-            <td><p><?php echo $costs_arr[10]; ?></p></td>
+            <td><p><?php echo $costs_symbols_sort[10]; ?></p></td>
+            <td><p><?php echo $costs_arr_sort[10]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $costs_src_way[9]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $costs_symbols[9]; ?></p></td>
-            <td><p><?php echo $costs_arr[9]; ?></p></td>
+            <td><p><?php echo $costs_symbols_sort[9]; ?></p></td>
+            <td><p><?php echo $costs_arr_sort[9]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $costs_src_way[8]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $costs_symbols[8]; ?></p></td>
-            <td><p><?php echo $costs_arr[8]; ?></p></td>
+            <td><p><?php echo $costs_symbols_sort[8]; ?></p></td>
+            <td><p><?php echo $costs_arr_sort[8]; ?></p></td>
         </tr>
         <tr>
-            
             <td style="width: 10px; ">
                 <center><img src=<?php echo $costs_src_way[7]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $costs_symbols[7]; ?></p></td>
-            <td><p><?php echo $costs_arr[7]; ?></p></td>
+            <td><p><?php echo $costs_symbols_sort[7]; ?></p></td>
+            <td><p><?php echo $costs_arr_sort[7]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $costs_src_way[6]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $costs_symbols[6]; ?></p></td>
-            <td><p><?php echo $costs_arr[6]; ?></p></td>
+            <td><p><?php echo $costs_symbols_sort[6]; ?></p></td>
+            <td><p><?php echo $costs_arr_sort[6]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $costs_src_way[5]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $costs_symbols[5]; ?></p></td>
-            <td><p><?php echo $costs_arr[5]; ?></p></td>
+            <td><p><?php echo $costs_symbols_sort[5]; ?></p></td>
+            <td><p><?php echo $costs_arr_sort[5]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $costs_src_way[4]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $costs_symbols[4]; ?></p></td>
-            <td><p><?php echo $costs_arr[4]; ?></p></td>
+            <td><p><?php echo $costs_symbols_sort[4]; ?></p></td>
+            <td><p><?php echo $costs_arr_sort[4]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $costs_src_way[3]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $costs_symbols[3]; ?></p></td>
-            <td><p><?php echo $costs_arr[3]; ?></p></td>
+            <td><p><?php echo $costs_symbols_sort[3]; ?></p></td>
+            <td><p><?php echo $costs_arr_sort[3]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $costs_src_way[2]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $costs_symbols[2]; ?></p></td>
-            <td><p><?php echo $costs_arr[2]; ?></p></td>
+            <td><p><?php echo $costs_symbols_sort[2]; ?></p></td>
+            <td><p><?php echo $costs_arr_sort[2]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $costs_src_way[1]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $costs_symbols[1]; ?></p></td>
-            <td><p><?php echo $costs_arr[1]; ?></p></td>
+            <td><p><?php echo $costs_symbols_sort[1]; ?></p></td>
+            <td><p><?php echo $costs_arr_sort[1]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $costs_src_way[0]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $costs_symbols[0]; ?></p></td>
-            <td><p><?php echo $costs_arr[0]; ?></p></td>
+            <td><p><?php echo $costs_symbols_sort[0]; ?></p></td>
+            <td><p><?php echo $costs_arr_sort[0]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
@@ -358,8 +359,19 @@ if (mysqli_num_rows($sql_costs) != 0) {
 <div id="container">
 
     <div id="col1">
-        <div id="black"></div>
-        <div id="red"></div>
+        <div id="food"><p id = "text_c"><? echo $costs_symbols[0]; ?> </p></div>
+        <div id="household_goods"><p id = "text_c"> <? echo $costs_symbols[1]; ?></p></div>
+        <div id="housing"><p id = "text_c"> <? echo $costs_symbols[2]; ?></p></div>
+        <div id="clothes"><p id = "text_c"> <? echo $costs_symbols[3]; ?></p></div>
+        <div id="health"><p id = "text_c"> <? echo $costs_symbols[4]; ?></p></div>
+        <div id="sport"><p id = "text_c"> <? echo $costs_symbols[5]; ?></p></div>
+        <div id="transport"><p id = "text_c"> <? echo $costs_symbols[6]; ?> </p></div>
+        <div id="entertainment"><p id = "text_c"> <? echo $costs_symbols[7]; ?></p></div>
+        <div id="pets"><p id = "text_c"> <? echo $costs_symbols[8]; ?></p></div>
+        <div id="car"><p id = "text_c"> <? echo $costs_symbols[9]; ?> </p></div>
+        <div id="present"><p id = "text_c"> <? echo $costs_symbols[10]; ?></p></div>
+        <div id="other"><p id = "text_c"><? echo $costs_symbols[11]; ?> </p></div>
+
     </div>
     <div id="col2">
         <canvas id="can">
@@ -404,7 +416,7 @@ if (mysqli_num_rows($sql_costs) != 0) {
 
             </script>
 
-            Колонка 2</div>
+            </div>
 </div>
 
 

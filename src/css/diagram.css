@@ -1,18 +1,79 @@
-
-
-#black{
-    height: 5px;
-    width: 5px;
-    background: #000;
+#food {
+    width: 40px;
+    height: 1px;
+    background: red;
 }
 
-#red {
-    height:5px;
-    width:5px;
-    background: #FF0000;
-    text-align: center;
-    margin-left: 50%;
-    margin-top: 0px;
+#household_goods{
+    width: 40px;
+    height: 1px;
+    background: green;
+}
+
+#housing{
+    width: 40px;
+    height: 1px;
+    background: blue;
+
+}
+
+#clothes{
+    width: 40px;
+    height: 1px;
+    background: darkgreen;
+}
+
+#health{
+    width: 40px;
+    height: 1px;
+    background: indigo;
+}
+
+#sport{
+    width: 40px;
+    height: 1px;
+    background: firebrick;
+}
+
+#transport{
+    width: 40px;
+    height: 1px;
+    background: thistle;
+}
+
+#entertainment{
+    width: 40px;
+    height: 1px;
+    background: sandybrown;
+}
+
+#pets{
+    width: 40px;
+    height: 1px;
+    background: salmon
+}
+
+#car{
+    width: 40px;
+    height: 1px;
+    background: yellow
+}
+
+#present{
+    width: 40px;
+    height: 1px;
+    background: palegoldenrod;
+}
+
+#other{
+    width: 40px;
+    height: 1px;
+    background: lightblue;
+}
+#text_c{
+    font-size: 20px;
+    margin-left: 100%;
+    margin-top: -7px;
 }
 
 table {
@@ -24,9 +85,9 @@ table {
 }
 
 #can{
-    margin-left: 155px;
-    margin-top: 0px;
-    width: 400px;
+    margin-left: 65px;
+    margin-top: 19px;
+    width: 500px;
     display: block;
 }
 
@@ -78,7 +139,7 @@ table {
 
 
 #container {
-    border-left: 535px solid #ffffff;
+    border-left: 570px solid #ffffff;
     background: #ffffff;
 }
 
@@ -91,7 +152,7 @@ table {
     margin-left: -200px;
 }
 #col2 {
-    padding: 20px;
+    padding: 0px;
 }
 div.clear {
     clear: both;
