@@ -33,7 +33,11 @@ if (isset($data['do_login'])) {
     <link rel="stylesheet" href=../css/login.css>
 </head>
 <body>
-<div></div>
+<div>
+    <br>
+    <br>
+    <span id = "name">Вход </span>
+</div>
 <form action="login.php" method="POST">
     <input type="text" name="login" placeholder="Логин" size="70" class="loginField"
            value="<?php echo @$data['login']; ?>">

@@ -11,7 +11,7 @@ $sql_id = mysqli_query($link, "SELECT id FROM users WHERE email='$login'");
 $id = mysqli_fetch_row($sql_id);
 $sql_goals = mysqli_query($link, "SELECT id FROM goals WHERE id ='$id[0]'");
 $goals_arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-$goals_symbols = ['Продукты', 'Хозяйственные нужды', 'Дом', 'Одежда', 'Здоровье', 'Спорт', 'Транспорт', 'Развлечения',
+$goals_symbols = ['Продукты', 'Хоз.нужды', 'Дом', 'Одежда', 'Здоровье', 'Спорт', 'Транспорт', 'Развлечения',
     'Животные', 'Машина', 'Подарки', 'Другое'];
 $goals_src_way = ['../img/diet.png', '../img/mop.png', '../img/house.png', '../img/polo-shirt.png', '../img/heart.png',
     '../img/muscle.png', '../img/bus.png', '../img/popcorn.png', '../img/dog.png', '../img/car.png',
@@ -104,7 +104,9 @@ if (mysqli_num_rows($sql_goals) != 0) {
 
     $total_goals = 0;
 
-    quickSort($goals_arr, 0, 11, $goals_symbols, $goals_src_way);
+    $goals_arr_sort = $goals_arr;
+    $goals_symbols_sort = $goals_symbols;
+    quickSort($goals_arr_sort, 0, 11, $goals_symbols_sort, $goals_src_way);
 
 
     for ($i = 11; $i >= 0; $i--) {
@@ -283,85 +285,85 @@ if (mysqli_num_rows($sql_goals) != 0) {
             <td style="width: 10px; ">
                 <center><img src= <?php echo $goals_src_way[11]; ?> "width=" 45" height="45"></center>
             </td>
-            <td><p><?php echo $goals_symbols[11]; ?></p></td>
-            <td><p><?php echo $goals_arr[11]; ?></p></td>
+            <td><p><?php echo $goals_symbols_sort[11]; ?></p></td>
+            <td><p><?php echo $goals_arr_sort[11]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src= <?php echo $goals_src_way[10]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $goals_symbols[10]; ?></p></td>
-            <td><p><?php echo $goals_arr[10]; ?></p></td>
+            <td><p><?php echo $goals_symbols_sort[10]; ?></p></td>
+            <td><p><?php echo $goals_arr_sort[10]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $goals_src_way[9]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $goals_symbols[9]; ?></p></td>
-            <td><p><?php echo $goals_arr[9]; ?></p></td>
+            <td><p><?php echo $goals_symbols_sort[9]; ?></p></td>
+            <td><p><?php echo $goals_arr_sort[9]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $goals_src_way[8]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $goals_symbols[8]; ?></p></td>
-            <td><p><?php echo $goals_arr[8]; ?></p></td>
+            <td><p><?php echo $goals_symbols_sort[8]; ?></p></td>
+            <td><p><?php echo $goals_arr_sort[8]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $goals_src_way[7]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $goals_symbols[7]; ?></p></td>
-            <td><p><?php echo $goals_arr[7]; ?></p></td>
+            <td><p><?php echo $goals_symbols_sort[7]; ?></p></td>
+            <td><p><?php echo $goals_arr_sort[7]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $goals_src_way[6]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $goals_symbols[6]; ?></p></td>
-            <td><p><?php echo $goals_arr[6]; ?></p></td>
+            <td><p><?php echo $goals_symbols_sort[6]; ?></p></td>
+            <td><p><?php echo $goals_arr_sort[6]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $goals_src_way[5]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $goals_symbols[5]; ?></p></td>
-            <td><p><?php echo $goals_arr[5]; ?></p></td>
+            <td><p><?php echo $goals_symbols_sort[5]; ?></p></td>
+            <td><p><?php echo $goals_arr_sort[5]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $goals_src_way[4]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $goals_symbols[4]; ?></p></td>
-            <td><p><?php echo $goals_arr[4]; ?></p></td>
+            <td><p><?php echo $goals_symbols_sort[4]; ?></p></td>
+            <td><p><?php echo $goals_arr_sort[4]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $goals_src_way[3]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $goals_symbols[3]; ?></p></td>
-            <td><p><?php echo $goals_arr[3]; ?></p></td>
+            <td><p><?php echo $goals_symbols_sort[3]; ?></p></td>
+            <td><p><?php echo $goals_arr_sort[3]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $goals_src_way[2]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $goals_symbols[2]; ?></p></td>
-            <td><p><?php echo $goals_arr[2]; ?></p></td>
+            <td><p><?php echo $goals_symbols_sort[2]; ?></p></td>
+            <td><p><?php echo $goals_arr_sort[2]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $goals_src_way[1]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $goals_symbols[1]; ?></p></td>
-            <td><p><?php echo $goals_arr[1]; ?></p></td>
+            <td><p><?php echo $goals_symbols_sort[1]; ?></p></td>
+            <td><p><?php echo $goals_arr_sort[1]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
                 <center><img src=<?php echo $goals_src_way[0]; ?> width="50" height="50"></center>
             </td>
-            <td><p><?php echo $goals_symbols[0]; ?></p></td>
-            <td><p><?php echo $goals_arr[0]; ?></p></td>
+            <td><p><?php echo $goals_symbols_sort[0]; ?></p></td>
+            <td><p><?php echo $goals_arr_sort[0]; ?></p></td>
         </tr>
         <tr>
             <td style="width: 10px; ">
@@ -373,46 +375,66 @@ if (mysqli_num_rows($sql_goals) != 0) {
         </tr>
     </table>
 </form>
-<canvas id="can">
-    <script>
-        var canvas = document.getElementById("can");
-        var ctx = canvas.getContext("2d");
-        var lastend = 0;
-        let goals_food = Number("<? echo $goals_arr[0]; ?>");
-        let goals_household_goods = Number("<? echo $goals_arr[1]; ?>");
-        let goals_housing = Number("<? echo $goals_arr[2]; ?>");
-        let goals_clothes = Number("<? echo $goals_arr[3]; ?>");
-        let goals_health = Number("<? echo $goals_arr[4]; ?>");
-        let goals_sport = Number("<? echo $goals_arr[5]; ?>");
-        let goals_transport = Number("<? echo $goals_arr[6]; ?>");
-        let goals_entertainment = Number("<? echo $goals_arr[7]; ?>");
-        let goals_pets = Number("<? echo $goals_arr[8]; ?>");
-        let goals_car = Number("<? echo $goals_arr[9]; ?>");
-        let goals_present = Number("<? echo $goals_arr[10]; ?>");
-        let goals_other = Number("<? echo $goals_arr[11]; ?>");
-        var data = [goals_food, goals_household_goods, goals_housing, goals_clothes, goals_health, goals_sport,
-            goals_transport, goals_entertainment, goals_pets, goals_car, goals_present, goals_other]; // If you add more data values make sure you add more colors
-        var myTotal = 0; // Automatically calculated so don't touch
-        var myColor = ['red', 'green', 'blue', "darkgreen", "indigo", "firebrick", "thistle", "sandybrown", "salmon",
-            "\tyellow", "palegoldenrod", "lightblue"]; // Colors of each slice
-        var name = ["Красный", "Зеленый", "Голубой"];
 
-        for (var e = 0; e < data.length; e++) {
-            myTotal += data[e];
-        }
+    <div id="container">
+        <div id="col1">
+            <div id="food"><p id = "text_c"><? echo $goals_symbols[0]; ?> </p></div>
+            <div id="household_goods"><p id = "text_c"> <? echo $goals_symbols[1]; ?></p></div>
+            <div id="housing"><p id = "text_c"> <? echo $goals_symbols[2]; ?></p></div>
+            <div id="clothes"><p id = "text_c"> <? echo $goals_symbols[3]; ?></p></div>
+            <div id="health"><p id = "text_c"> <? echo $goals_symbols[4]; ?></p></div>
+            <div id="sport"><p id = "text_c"> <? echo $goals_symbols[5]; ?></p></div>
+            <div id="transport"><p id = "text_c"> <? echo $goals_symbols[6]; ?> </p></div>
+            <div id="entertainment"><p id = "text_c"> <? echo $goals_symbols[7]; ?></p></div>
+            <div id="pets"><p id = "text_c"> <? echo $goals_symbols[8]; ?></p></div>
+            <div id="car"><p id = "text_c"> <? echo $goals_symbols[9]; ?> </p></div>
+            <div id="present"><p id = "text_c"> <? echo $goals_symbols[10]; ?></p></div>
+            <div id="other"><p id = "text_c"><? echo $goals_symbols[11]; ?> </p></div>
+        </div>
+        <div id="col2">
+            <canvas id="can">
 
-        for (var i = 0; i < data.length; i++) {
-            ctx.fillStyle = myColor[i];
-            ctx.beginPath();
-            ctx.moveTo(canvas.width / 2, canvas.height / 2);
-            // Arc Parameters: x, y, radius, startingAngle (radians), endingAngle (radians), antiClockwise (boolean)
-            ctx.arc(canvas.width / 2, canvas.height / 2, canvas.height / 2, lastend, lastend + (Math.PI * 2 * (data[i] / myTotal)), false);
-            ctx.lineTo(canvas.width / 2, canvas.height / 2);
-            ctx.fill();
-            lastend += Math.PI * 2 * (data[i] / myTotal);
-        }
+                <script>
+                    var canvas = document.getElementById("can");
+                    var ctx = canvas.getContext("2d");
+                    var lastend = 0;
+                    let costs_food = Number("<? echo $goals_arr[0]; ?>");
+                    let costs_household_goods = Number("<? echo $goals_arr[1]; ?>");
+                    let costs_housing = Number("<? echo $goals_arr[2]; ?>");
+                    let costs_clothes = Number("<? echo $goals_arr[3]; ?>");
+                    let costs_health = Number("<? echo $goals_arr[4]; ?>");
+                    let costs_sport = Number("<? echo $goals_arr[5]; ?>");
+                    let costs_transport = Number("<? echo $goals_arr[6]; ?>");
+                    let costs_entertainment = Number("<? echo $goals_arr[7]; ?>");
+                    let costs_pets = Number("<? echo $goals_arr[8]; ?>");
+                    let costs_car = Number("<? echo $goals_arr[9]; ?>");
+                    let costs_present = Number("<? echo $goals_arr[10]; ?>");
+                    let costs_other = Number("<? echo $goals_arr[11]; ?>");
+                    var data = [costs_food, costs_household_goods, costs_housing, costs_clothes, costs_health, costs_sport,
+                        costs_transport, costs_entertainment, costs_pets, costs_car, costs_present, costs_other]; // If you add more data values make sure you add more colors
+                    var myTotal = 0; // Automatically calculated so don't touch
+                    var myColor = ['red', 'green', 'blue', "darkgreen", "indigo", "firebrick", "thistle", "sandybrown", "salmon",
+                        "\tyellow", "palegoldenrod", "lightblue"]; // Colors of each slice
+                    var name = ["Красный", "Зеленый", "Голубой"];
 
-    </script>
+                    for (var e = 0; e < data.length; e++) {
+                        myTotal += data[e];
+                    }
 
+                    for (var i = 0; i < data.length; i++) {
+                        ctx.fillStyle = myColor[i];
+                        ctx.beginPath();
+                        ctx.moveTo(canvas.width / 2, canvas.height / 2);
+                        // Arc Parameters: x, y, radius, startingAngle (radians), endingAngle (radians), antiClockwise (boolean)
+                        ctx.arc(canvas.width / 2, canvas.height / 2, canvas.height / 2, lastend, lastend + (Math.PI * 2 * (data[i] / myTotal)), false);
+                        ctx.lineTo(canvas.width / 2, canvas.height / 2);
+                        ctx.fill();
+                        lastend += Math.PI * 2 * (data[i] / myTotal);
+                    }
+
+                </script>
+
+        </div>
+    </div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 
-require_once('../phpmailer/PHPMailerAutoload.php');
+require_once('../php_mailer/PHPMailerAutoload.php');
 require_once('connection.php');
 
 $mail = new PHPMailer;

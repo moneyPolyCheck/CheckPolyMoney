@@ -8,7 +8,7 @@ $id = mysqli_fetch_row($sql_id);
 $sql_costs = mysqli_query($link, "SELECT id_cost FROM costs WHERE id_cost ='$id[0]'");
 $costs_arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 $costs_symbols = ['', '', '', '', '', '', '', '', '', '', ''];
-$costs_symbols = ['Продукты', 'Хозяйственные нужды', 'Дом', 'Одежда', 'Здоровье', 'Спорт', 'Транспорт', 'Развлечения',
+$costs_symbols = ['Продукты', 'Хоз.нужды', 'Дом', 'Одежда', 'Здоровье', 'Спорт', 'Транспорт', 'Развлечения',
     'Животные', 'Машина', 'Подарки', 'Другое'];
 $costs_src_way = ['../img/diet.png', '../img/mop.png', '../img/house.png', '../img/polo-shirt.png', '../img/heart.png',
     '../img/muscle.png', '../img/bus.png', '../img/popcorn.png', '../img/dog.png', '../img/car.png',

@@ -24,6 +24,15 @@ body {
     }
 }
 
+#name{
+    font-family: Arial, serif;
+    color: #691b99; /* Цвет текста */
+    left: 60em;
+    font-size: 30px;
+    margin-left: 200px; /*отступ поля слева */
+    margin-top: -10px;
+}
+
 .loginField {
     background-color: white; /* Цвет фона */
     color: black; /* Цвет текста */
