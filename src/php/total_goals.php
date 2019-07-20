@@ -127,6 +127,8 @@ if (mysqli_num_rows($sql_goals) != 0) {
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href=../css/diagram.css>
+	<link rel="stylesheet" href=../css/menu.css>
+
     <style>
         @import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
 
@@ -249,9 +251,25 @@ if (mysqli_num_rows($sql_goals) != 0) {
     </style>
 </head>
 <body>
-<ul id="navbar">
-    <li><a href="#">Главная</a></li>
-</ul>
+<ul id="navbar"></ul>
+<div id="sidebar">
+    <div id="button" onclick="openMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul>
+        <li>Навигация</li>
+        <li><a href="../html/goals.html">Мои цели</a></li>
+        <li><a href="../php/addingCosts.php">Мои расходы</a></li>
+        <li><a href="../php/logout.php">Выход</a></li>
+    </ul>
+</div>
+<script>
+    function openMenu() {
+        document.getElementById("sidebar").classList.toggle('active');
+    }
+</script>
 <div class="d1"><h3><span>Ваши цели на этот месяц</span></h3></div>
 <form action="total_goals.php" method="post">
     <ul class="menu-main">

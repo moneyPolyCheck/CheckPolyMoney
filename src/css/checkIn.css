@@ -23,7 +23,7 @@ body {
 }
 
 #name {
-    color: #d2aff9; /* Цвет текста */
+    color: #000000; /* Цвет текста */
     border: solid 1px #9700ff;
     height: 40px; /*ширина поля*/
     margin-top: 50px; /*отступ сверху*/
